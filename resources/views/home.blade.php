@@ -1,4 +1,6 @@
-<!-- [ Main Content ] start -->
+@extends('layouts.master')
+@section('content')
+ <!-- [ Main Content ] start -->
 <div class="pcoded-main-container">
     <div class="pcoded-content">
         <!-- [ breadcrumb ] start -->
@@ -647,3 +649,5 @@
         <!-- [ Main Content ] end -->
     </div>
 </div>
+
+@endsection
