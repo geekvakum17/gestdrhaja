@@ -1,11 +1,11 @@
 <?php
 
-namespace app/model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Sous-direction extends Model 
+class Sousdirection extends Model
 {
 
     protected $table = 'sous-direction';
