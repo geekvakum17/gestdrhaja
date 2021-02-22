@@ -1,43 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace app/model;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class User extends Model 
 {
-    use HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $table = 'user';
+    public $timestamps = true;
+    protected $fillable = array('nomprenom', 'datenaissance', 'situationmatri', 'lieuxnaissance', 'Niveauetude', 'grade_id', 'villeresidence', 'suphierachique', 'datepriseservice', 'nbrenfant', 'agenceregional_id', 'diplome', 'poste', 'direction_id', 'email', 'password', 'contact', 'service_id', 'sous-direction_id');
+    protected $visible = array('idpersonne', 'nomprenom', 'datenaissance', 'situationmatri', 'lieuxnaissance', 'Niveauetude', 'grade_id', 'villeresidence', 'suphierachique', 'datepriseservice', 'nbrenfant', 'agenceregional_id', 'diplome', 'poste', 'direction_id', 'email', 'password', 'contact', 'service_id', 'sous-direction_id');
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 }

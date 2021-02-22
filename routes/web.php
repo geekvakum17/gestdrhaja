@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('user', 'UserController');
+Route::resource('direction', 'DirectionController');
+Route::resource('agenceregional', 'AgenceregionalController');
+Route::resource('grade', 'GradeController');
+Route::resource('sous-direction', 'Sous-directionController');
+Route::resource('service', 'ServiceController');
