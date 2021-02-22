@@ -1,6 +1,8 @@
 @extends('layouts.master')
+@section('css')
+@endsection
 @section('content')
- <!-- [ Main Content ] start -->
+<!-- [ Main Content ] start -->
 <div class="pcoded-main-container">
     <div class="pcoded-content">
         <!-- [ breadcrumb ] start -->
@@ -646,8 +648,6 @@
             </div>
             <!-- Latest Customers end -->
         </div>
-        <!-- [ Main Content ] end -->
-    </div>
-</div>
-
+@endsection
+@section('js')
 @endsection

@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
+
+Route::get('/', 'DashboardController@index')->name('dashboard');
 
 Route::resource('user', 'UserController');
 Route::resource('direction', 'DirectionController');

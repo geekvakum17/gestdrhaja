@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
     <title>Gesdrhaja</title>
     <!-- Meta -->
     <meta charset="utf-8">
@@ -16,22 +16,33 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     @yield('css')
-</head>
-<body class="">
-@include('layouts.sidebar')
-@yield('content')
-</body>
- <!-- Required Js -->
-    <script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/ripple.js') }}"></script>
-    <script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
-	<script src="{{ asset('assets/js/menu-setting.min.js') }}"></script>
+    </head>
+    <body class="antialiased">
+
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+    <!-- [ Pre-loader ] End -->
+    @include('layouts.nav')
+    @include('layouts.header')
+
+    @yield('content')
+<!-- Required Js -->
+<script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/ripple.js') }}"></script>
+<script src="{{ asset('assets/js/pcoded.min.js') }}"></script>
+<script src="{{ asset('assets/js/menu-setting.min.js') }}"></script>
+
+@yield('js')
+
 <!-- Apex Chart -->
 <script src="{{ asset('assets/js/plugins/apexcharts.min.js') }}"></script>
 <!-- custom-chart js -->
 <script src="{{ asset('assets/js/pages/dashboard-main.js') }}"></script>
-@yield('js')
 <script>
     $(document).ready(function() {
         checkCookie();
@@ -76,4 +87,5 @@
         }
     }
 </script>
+</body>
 </html>
