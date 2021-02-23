@@ -69,22 +69,20 @@
 							<li><a href="user-list.html">User List</a></li>
 						</ul>
 					</li>
-					<li class="nav-item pcoded-menu-caption">
+					{{--  <li class="nav-item pcoded-menu-caption">
 						<label>Admin Panel <span class="pcoded-badge badge badge-danger">NEW</span><span class="pcoded-badge badge badge-warning">HOT</span></label>
-					</li>
+					</li>  --}}
 					<li class="nav-item pcoded-hasmenu">
-						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-activity"></i></span><span class="pcoded-mtext">Hospital</span></a>
+						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-crop"></i></span><span class="pcoded-mtext">Paramètres</span></a>
 						<ul class="pcoded-submenu">
-							<li><a href="hospital-dashboard.html">Dashboard</a></li>
-							<li><a href="hospital-department.html">Department</a></li>
-							<li><a href="hospital-doctor.html">Doctor</a></li>
-							<li><a href="hospital-patient.html">Patient</a></li>
-							<li><a href="hospital-nurse.html">Nurse</a></li>
-							<li><a href="hospital-pharmacist.html">Pharmacist</a></li>
-							<li><a href="hospital-laboratorie.html">Laboratorie</a></li>
+							<li><a href="">Direction</a></li>
+							<li><a href="">Sous - Direction</a></li>
+							<li><a href="">Services</a></li>
+							<li><a href="">Agence Régionale</a></li>
+							<li><a href="">Grade</a></li>
 						</ul>
 					</li>
-					<li class="nav-item pcoded-hasmenu">
+				{{--  	<li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user-check"></i></span><span class="pcoded-mtext">Membership</span></a>
 						<ul class="pcoded-submenu">
 							<li><a href="member-dashboard.html">Dashboard</a></li>
@@ -375,10 +373,10 @@
 					</li>
 					<li class="nav-item disabled"><a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Disabled menu</span></a></li>
 					<li class="nav-item"><a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
-
+  --}}
 				</ul>
 
-				<div class="card text-center">
+				{{--  <div class="card text-center">
 					<div class="card-block">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 						<i class="feather icon-sunset f-40"></i>
@@ -386,7 +384,7 @@
 						<p>Please contact us on our email for need any support</p>
 						<a href="#!" target="_blank" class="btn btn-primary btn-sm text-white m-0">Support</a>
 					</div>
-				</div>
+				</div>  --}}
 
 			</div>
 		</div>
