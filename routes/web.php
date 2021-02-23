@@ -26,3 +26,7 @@ Route::resource('agenceregional', 'AgenceregionalController');
 Route::resource('grade', 'GradeController');
 Route::resource('sous-direction', 'Sous-directionController');
 Route::resource('service', 'ServiceController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
