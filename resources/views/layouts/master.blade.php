@@ -14,7 +14,6 @@
 
     <!-- vendor css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     @yield('css')
     </head>
     <body class="antialiased">

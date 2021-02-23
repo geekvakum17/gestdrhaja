@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('auth.layouts.main')
 @section('content')
 <div class="auth-wrapper align-items-stretch aut-bg-img">
 	<div class="flex-grow-1">
@@ -10,6 +10,8 @@
 			</div>
 		</div>
 		<div class="auth-side-form">
+             <form method="POST" action="{{ route('login') }}">
+            @csrf
 			<div class=" auth-content">
 				<img src="assets/images/auth/auth-logo-dark.png" alt="" class="img-fluid mb-4 d-block d-xl-none d-lg-none">
 				<h3 class="mb-4 f-w-400">Signin</h3>
@@ -38,4 +40,4 @@
 		</div>
 	</div>
 </div>
-@endsection
+@stop
