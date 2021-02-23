@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 }); */
 
-
+//route('dashboard');
 Route::get('/', 'DashboardController@index')->name('dashboard');
 
 Route::resource('user', 'UserController');
@@ -26,7 +26,9 @@ Route::resource('agenceregional', 'AgenceregionalController');
 Route::resource('grade', 'GradeController');
 Route::resource('sous-direction', 'Sous-directionController');
 Route::resource('service', 'ServiceController');
-
+/* route('login')
+route('register')
+route('logout') */
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
