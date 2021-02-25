@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Service;
 
 class ServiceController extends Controller 
 {
@@ -14,6 +15,7 @@ class ServiceController extends Controller
    */
   public function index()
   {
+    return view('parametres.services');
     
   }
 
@@ -34,7 +36,18 @@ class ServiceController extends Controller
    */
   public function store(Request $request)
   {
-    
+    try{
+      $service = new Service();
+      $service->libelle = $request->libelle;
+      $service->lieuservice = $request->lieuservice;
+      $service->descriptionservice = $request->descriptionservice;
+      $service->save();
+      session()->flash('success',"Service {$service->libelle} ajouté avec succès !!!");
+    }catch(\Exception $e){
+        session()->flash('warning',$e->getMessage());
+    }
+  
+  return redirect()->route('services.index');
   }
 
   /**

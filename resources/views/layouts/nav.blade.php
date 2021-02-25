@@ -75,11 +75,11 @@
 					<li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-crop"></i></span><span class="pcoded-mtext">Paramètres</span></a>
 						<ul class="pcoded-submenu">
-							<li><a href="">Direction</a></li>
-							<li><a href="">Sous - Direction</a></li>
-							<li><a href="">Services</a></li>
-							<li><a href="">Agence Régionale</a></li>
-							<li><a href="">Grade</a></li>
+							<li><a href="{{ route('direction.index') }}">Direction</a></li>
+							<li><a href="{{ route('sousdirection.index') }}">Sous - Direction</a></li>
+							<li><a href="{{ route('services.index') }}">Services</a></li>
+							<li><a href="{{ route('agenceregional.index') }}">Agence Régionale</a></li>
+							<li><a href="{{ route('grade.index') }}">Grade</a></li>
 						</ul>
 					</li>
 				{{--  	<li class="nav-item pcoded-hasmenu">

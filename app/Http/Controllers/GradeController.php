@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Grade;
 
 class GradeController extends Controller 
 {
@@ -14,7 +15,7 @@ class GradeController extends Controller
    */
   public function index()
   {
-    
+    return view('parametres.grade');
   }
 
   /**
@@ -34,6 +35,18 @@ class GradeController extends Controller
    */
   public function store(Request $request)
   {
+
+    try{
+      $grade = new Grade();
+      $grade->libelle = $request->libelle;
+      //$grade->description = $request->description;
+      $grade->save();
+      session()->flash('success',"Grade {$grade->libelle} ajouté avec succès !!!");
+    }catch(\Exception $e){
+        session()->flash('warning',$e->getMessage());
+    }
+  
+  return redirect()->route('grade.index');
     
   }
 

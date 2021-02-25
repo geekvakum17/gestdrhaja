@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sousdirection;
 
 class SousdirectionController extends Controller
 {
@@ -14,7 +15,7 @@ class SousdirectionController extends Controller
    */
   public function index()
   {
-
+    return view('parametres.sousdirection');
   }
 
   /**
@@ -34,7 +35,18 @@ class SousdirectionController extends Controller
    */
   public function store(Request $request)
   {
-
+    try{
+      $sousdirection = new Sousdirection();
+      $sousdirection->libelle = $request->libelle;
+      $sousdirection->lieudirection = $request->lieudirection;
+      $sousdirection->description = $request->description;
+      $sousdirection->save();
+      session()->flash('success',"Sous-Direction {$sousdirection->libelle} ajouté avec succès !!!");
+    }catch(\Exception $e){
+        session()->flash('warning',$e->getMessage());
+    }
+  
+  return redirect()->route('sousdirection.index');
   }
 
   /**

@@ -27,7 +27,7 @@
     <!-- [ Pre-loader ] End -->
     @include('layouts.nav')
     @include('layouts.header')
-
+    
     @yield('content')
 <!-- Required Js -->
 <script src="{{ asset('assets/js/vendor-all.min.js') }}"></script>
@@ -42,6 +42,10 @@
 <script src="{{ asset('assets/js/plugins/apexcharts.min.js') }}"></script>
 <!-- custom-chart js -->
 <script src="{{ asset('assets/js/pages/dashboard-main.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/dataTables.bootstrap4.min.js') }}"></script>
+<!-- Apex Chart -->
+
 <script>
     $(document).ready(function() {
         checkCookie();

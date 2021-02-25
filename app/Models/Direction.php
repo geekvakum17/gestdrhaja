@@ -9,7 +9,7 @@ class Direction extends Model
 
     protected $table = 'direction';
     public $timestamps = true;
-    protected $fillable = array('libelle');
+    protected $fillable = array('libelle','description');
     protected $visible = array('libelle');
 
 }
