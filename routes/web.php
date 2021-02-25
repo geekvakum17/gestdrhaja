@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 //route('dashboard');
 Route::get('/', 'DashboardController@index')->name('dashboard');
 
+Route::post('/phone', 'SessionController@store')->name('phone');
+
 Route::resource('user', 'UserController');
 Route::resource('direction', 'DirectionController');
 Route::resource('agenceregional', 'AgenceregionalController');
