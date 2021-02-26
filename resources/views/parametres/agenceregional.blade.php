@@ -38,6 +38,7 @@
                             <div class="col-sm-6 text-right">
                                 <button class="btn btn-success btn-sm btn-round has-ripple" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Ajouter une Agence</button>
                             </div>
+                            <br>
                         </div>
                         <div class="table-responsive">
                             <table id="report-table" class="table table-bordered table-striped mb-0">

@@ -374,8 +374,8 @@
 					<li class="nav-item disabled"><a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Disabled menu</span></a></li>
 					<li class="nav-item"><a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
   --}}
-				</ul> -->
-<!-- 
+				</ul> 
+<!--
 				{{--  <div class="card text-center">
 					<div class="card-block">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
