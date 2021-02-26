@@ -15,7 +15,8 @@ class AgenceregionalController extends Controller
    */
   public function index()
   {
-    return view('parametres.agenceregional');
+    $agence = Agenceregional::all();
+    return view('parametres.agenceregional', compact('agence'));
   }
 
   /**

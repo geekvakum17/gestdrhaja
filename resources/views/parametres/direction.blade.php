@@ -17,7 +17,7 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#!">Direction</a></li>
-                            {{-- <li class="breadcrumb-item"><a href="#!">Department</a></li> --}}
+                            <!-- {{-- <li class="breadcrumb-item"><a href="#!">Department</a></li> --}} -->
                         </ul>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
         <!-- [ breadcrumb ] end -->
         <!-- [ Main Content ] start -->
         <div class="row">
-            
+
             <!-- customar project  start -->
             <div class="col-xl-12">
                 <div class="card">
@@ -41,16 +41,17 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            
-                                
-                           
+
+
+
                             <table id="report-table" class="table table-bordered table-striped mb-0">
                                 <thead>
                                     <tr>
-                                        
+
                                         <th>Direction</th>
                                         <th width="50%">Description</th>
-                                       
+                                        <th>Action</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,9 +60,9 @@
                                         <td>{{ $item->libelle }}</td>
                                         <td>{{ $item->description }}</td>
                                         <td>
-                                            <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                            <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                            <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                            <!-- <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a> -->
+                                            <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Modification </a>
+                                            <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Supprimer </a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -102,15 +103,15 @@
                                 <input type="text" class="form-control" id="description" name="description" placeholder="Description">
                             </div>
                         </div>
-                            
-                        </div>
-                        <button class="btn btn-primary">Ajouter</button>
-                            <button class="btn btn-danger">Annuller</button>
+
                     </div>
-                </form>
+                    <button class="btn btn-primary">Ajouter</button>
+                    <button class="btn btn-danger">Annuller</button>
             </div>
+            </form>
         </div>
     </div>
+</div>
 </div>
 @endsection
 @section('js')

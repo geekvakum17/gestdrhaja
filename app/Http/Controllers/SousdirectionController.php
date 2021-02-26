@@ -15,7 +15,9 @@ class SousdirectionController extends Controller
    */
   public function index()
   {
-    return view('parametres.sousdirection');
+
+    $sousdirection = Sousdirection::all();
+    return view('parametres.sousdirection', compact('sousdirection'));
   }
 
   /**

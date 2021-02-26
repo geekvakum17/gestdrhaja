@@ -41,7 +41,7 @@ class DirectionController extends Controller
         $direction->libelle = $request->libelle;
         $direction->description = $request->description;
         $direction->save();
-        session()->flash('success',"Direction {$direction->libelle}ajouté avec succès !!!");
+        session()->flash('success',"Direction {$direction->libelle} ajouté avec succès !!!");
       }catch(\Exception $e){
           session()->flash('warning',$e->getMessage());
       }

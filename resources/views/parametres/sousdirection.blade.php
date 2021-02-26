@@ -12,12 +12,12 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Department</h5>
+                            <h5 class="m-b-10">Sous-Direction</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">Hospital</a></li>
-                            <li class="breadcrumb-item"><a href="#!">Department</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Sous-Direction</a></li>
+                            <!-- <li class="breadcrumb-item"><a href="#!">Department</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -36,80 +36,35 @@
 
                             </div>
                             <div class="col-sm-6 text-right">
-                                <button class="btn btn-success btn-sm btn-round has-ripple" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add Department</button>
+                                <button class="btn btn-success btn-sm btn-round has-ripple" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Ajouter une Sous-Direction</button>
                             </div>
                         </div>
                         <div class="table-responsive">
                             <table id="report-table" class="table table-bordered table-striped mb-0">
+
                                 <thead>
                                     <tr>
-                                        <th>Icon</th>
-                                        <th>Name</th>
+                                        <th>Sous-Direction</th>
+                                        <th>Lieux</th>
                                         <th width="50%">Description</th>
-                                        <th>Options</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($sousdirection as $item)
                                     <tr>
                                         <td>
-                                            <img src="assets/images/ticket/p1.jpg">
+                                            {{ $item->libelle }}
                                         </td>
-                                        <td>Anesthetics</td>
-                                        <td>There are many variations of passages of Lorem Ipsum ...</td>
+                                        <td>{{ $item->lieudirection }}</td>
+                                        <td>{{ $item->description }}</td>
                                         <td>
-                                            <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                            <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                            <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                            <!-- <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a> -->
+                                            <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Modification </a>
+                                            <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Suppression </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="assets/images/ticket/p3.jpg">
-                                        </td>
-                                        <td>Cardiology</td>
-                                        <td>There are many variations of passages of Lorem Ipsum ...</td>
-                                        <td>
-                                            <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                            <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                            <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="assets/images/ticket/p2.jpg">
-                                        </td>
-                                        <td>Gastroenterology</td>
-                                        <td>There are many variations of passages of Lorem Ipsum ...</td>
-                                        <td>
-                                            <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                            <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                            <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="assets/images/ticket/p4.jpg">
-                                        </td>
-                                        <td>Anesthetics</td>
-                                        <td>There are many variations of passages of Lorem Ipsum ...</td>
-                                        <td>
-                                            <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                            <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                            <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="assets/images/ticket/p5.jpg">
-                                        </td>
-                                        <td>Gastroenterology</td>
-                                        <td>There are many variations of passages of Lorem Ipsum ...</td>
-                                        <td>
-                                            <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                            <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                            <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -131,7 +86,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('grade.store') }}">
+                <form method="POST" action="{{ route('sousdirection.store') }}">
                     @csrf()
                     <div class="row">
                         <div class="col-sm-6">
