@@ -7,7 +7,7 @@
 					<div class="main-menu-header">
 						<img class="img-radius" src="assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
 						<div class="user-details">
-							<div id="more-details">UX Designer <i class="fa fa-caret-down"></i></div>
+							<div id="more-details"><i class="fa fa-caret-down"></i></div>
 						</div>
 					</div>
 					<div class="collapse" id="nav-user-link">
@@ -20,7 +20,7 @@
 				</div>
 
 				<ul class="nav pcoded-inner-navbar ">
-					<li class="nav-item pcoded-menu-caption">
+					<!-- <li class="nav-item pcoded-menu-caption">
 						<label>Navigation</label>
 					</li>
 					<li class="nav-item pcoded-hasmenu">
@@ -32,8 +32,8 @@
 							<li><a href="dashboard-analytics.html">Analytics</a></li>
 							<li><a href="dashboard-project.html">Project</a></li>
 						</ul>
-					</li>
-					<li class="nav-item pcoded-hasmenu">
+					</li> -->
+					<!-- <li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Page layouts</span></a>
 						<ul class="pcoded-submenu">
 							<li class="pcoded-hasmenu"><a href="#!">Vertical</a>
@@ -52,15 +52,15 @@
 							<li><a href="layout-light.html" target="_blank">Navbar dark</a></li>
 							<li><a href="layout-dark.html" target="_blank">Dark layout <span class="pcoded-badge badge badge-danger">Hot</span></a></li>
 						</ul>
-					</li>
-					<li class="nav-item pcoded-hasmenu">
+					</li> -->
+					<!-- <li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layers"></i></span><span class="pcoded-mtext">Widget</span><span class="pcoded-badge badge badge-success">100+</span></a>
 						<ul class="pcoded-submenu">
 							<li><a href="widget-statistic.html">Statistic</a></li>
 							<li><a href="widget-data.html">Data</a></li>
 							<li><a href="widget-chart.html">Chart</a></li>
 						</ul>
-					</li>
+					</li> -->
 					<li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link"><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">User</span></a>
 						<ul class="pcoded-submenu">
@@ -75,11 +75,11 @@
 					<li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-crop"></i></span><span class="pcoded-mtext">Paramètres</span></a>
 						<ul class="pcoded-submenu">
-							<li><a href="">Direction</a></li>
-							<li><a href="">Sous - Direction</a></li>
-							<li><a href="">Services</a></li>
-							<li><a href="">Agence Régionale</a></li>
-							<li><a href="">Grade</a></li>
+							<li><a href="{{ route('direction.index') }}">Direction</a></li>
+							<li><a href="{{ route('sousdirection.index') }}">Sous - Direction</a></li>
+							<li><a href="{{ route('services.index') }}">Services</a></li>
+							<li><a href="{{ route('agenceregional.index') }}">Agence Régionale</a></li>
+							<li><a href="{{ route('grade.index') }}">Grade</a></li>
 						</ul>
 					</li>
 				{{--  	<li class="nav-item pcoded-hasmenu">
@@ -104,7 +104,7 @@
 							<li><a href="help-customer.html">Customer</a></li>
 						</ul>
 					</li>
-					<li class="nav-item pcoded-hasmenu">
+					<!-- <li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-book"></i></span><span class="pcoded-mtext">School</span></a>
 						<ul class="pcoded-submenu">
 							<li><a href="school-dashboard.html">Dashboard</a></li>
@@ -374,8 +374,8 @@
 					<li class="nav-item disabled"><a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-power"></i></span><span class="pcoded-mtext">Disabled menu</span></a></li>
 					<li class="nav-item"><a href="sample-page.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sidebar"></i></span><span class="pcoded-mtext">Sample page</span></a></li>
   --}}
-				</ul>
-
+				</ul> -->
+<!-- 
 				{{--  <div class="card text-center">
 					<div class="card-block">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -387,6 +387,6 @@
 				</div>  --}}
 
 			</div>
-		</div>
+		</div> -->
 	</nav>
 	<!-- [ navigation menu ] end -->

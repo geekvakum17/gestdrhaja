@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Direction;
 
 class DirectionController extends Controller 
 {
@@ -14,7 +15,8 @@ class DirectionController extends Controller
    */
   public function index()
   {
-    
+    $direction = Direction::all();
+    return view('parametres.direction',compact('direction'));
   }
 
   /**
@@ -34,7 +36,17 @@ class DirectionController extends Controller
    */
   public function store(Request $request)
   {
+      try{
+        $direction = new Direction();
+        $direction->libelle = $request->libelle;
+        $direction->description = $request->description;
+        $direction->save();
+        session()->flash('success',"Direction {$direction->libelle} ajouté avec succès !!!");
+      }catch(\Exception $e){
+          session()->flash('warning',$e->getMessage());
+      }
     
+    return redirect()->route('direction.index');
   }
 
   /**

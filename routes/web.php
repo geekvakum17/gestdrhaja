@@ -23,11 +23,23 @@ Route::get('/', 'DashboardController@index')->name('dashboard');
 Route::post('/phone', 'SessionController@store')->name('phone');
 
 Route::resource('user', 'UserController');
+
 Route::resource('direction', 'DirectionController');
+
+// Route::get('/direction','DirectionController@index')->name('direction.index');
+// Route::post('/direction','DirectionController@store')->name('direction.store');
+// Route::get('/direction/create','DirectionController@create')->name('direction.create');
+// Route::get('/direction/{id}','DirectionController@edit')->name('direction.edit');
+// Route::put('/direction/{id}/update','DirectionController@update')->name('direction.update');
+
+
+
+
+
 Route::resource('agenceregional', 'AgenceregionalController');
 Route::resource('grade', 'GradeController');
-Route::resource('sous-direction', 'Sous-directionController');
-Route::resource('service', 'ServiceController');
+Route::resource('sousdirection', 'SousdirectionController');
+Route::resource('services', 'ServiceController');
 /* route('login')
 route('register')
 route('logout') */

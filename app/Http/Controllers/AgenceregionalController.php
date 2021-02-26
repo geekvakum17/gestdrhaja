@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Agenceregional;
 
 class AgenceregionalController extends Controller 
 {
@@ -14,7 +15,8 @@ class AgenceregionalController extends Controller
    */
   public function index()
   {
-    
+    $agence = Agenceregional::all();
+    return view('parametres.agenceregional', compact('agence'));
   }
 
   /**
@@ -34,7 +36,17 @@ class AgenceregionalController extends Controller
    */
   public function store(Request $request)
   {
-    
+    try{
+      $agence = new Agenceregional();
+      $agence->libelle = $request->libelle;
+      //$agence->description = $request->description;
+      $agence->save();
+      session()->flash('success',"Agence Regional {$agence->libelle} ajouté avec succès !!!");
+    }catch(\Exception $e){
+        session()->flash('warning',$e->getMessage());
+    }
+  
+  return redirect()->route('agenceregional.index');
   }
 
   /**
