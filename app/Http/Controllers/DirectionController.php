@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Direction;
 
-class DirectionController extends Controller 
+class DirectionController extends Controller
 {
 
   /**
@@ -26,7 +26,7 @@ class DirectionController extends Controller
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -45,7 +45,7 @@ class DirectionController extends Controller
       }catch(\Exception $e){
           session()->flash('warning',$e->getMessage());
       }
-    
+
     return redirect()->route('direction.index');
   }
 
@@ -57,7 +57,7 @@ class DirectionController extends Controller
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -68,7 +68,7 @@ class DirectionController extends Controller
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -77,9 +77,20 @@ class DirectionController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
+  public function update(Request $request,$id)
   {
-    
+        try {
+            $direction = Direction::findOrFail(request('direction_id'));
+            $direction->update([
+                'libelle'     => request('libelle'),
+                'description' => request('description'),
+            ]);
+            session()->flash('info', "Direction {$direction->libelle} modifié avec succès !!!");
+        } catch (\Exception $e) {
+            session()->flash('warning', $e->getMessage());
+        }
+
+        return redirect()->route('direction.index');
   }
 
   /**
@@ -90,9 +101,17 @@ class DirectionController extends Controller
    */
   public function destroy($id)
   {
-    
+        try {
+            // $direction = Direction::findOrFail(request('direction_id'));
+            Direction::destroy(request('direction_id'));
+            //$direction->delete();
+            session()->flash('danger', "Direction supprimé avec succès !!!");
+        } catch (\Exception $e) {
+            session()->flash('warning', $e->getMessage());
+        }
+        return redirect()->route('direction.index');
   }
-  
+
 }
 
 ?>
