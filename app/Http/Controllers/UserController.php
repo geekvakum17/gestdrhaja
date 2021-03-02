@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agenceregional;
+use App\Models\Direction;
+use App\Models\Grade;
+use App\Models\Service;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller 
 {
@@ -13,8 +18,14 @@ class UserController extends Controller
    * @return Response
    */
   public function index()
-  {
-    
+  {   
+    $user = User::all();
+    $direction = Direction::all();
+    $service = Service::all();
+    $grade = Grade::all();
+    $agence = Agenceregional::all();   
+    return view('gestionUsers.user', compact('user', 'direction', 'service', 'grade', 'agence'));
+    //dd();
   }
 
   /**

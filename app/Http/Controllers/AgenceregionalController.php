@@ -79,7 +79,17 @@ class AgenceregionalController extends Controller
    */
   public function update($id)
   {
-    
+    try {
+      $agence = Agenceregional::findOrFail(request('agenceregional_id'));
+      $agence->update([
+        'libelle'     => request('libelle'),
+      ]);
+      session()->flash('info', "Agence Regional {$agence->libelle} modifié avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
+
+    return redirect()->route('agenceregional.index');
   }
 
   /**
@@ -90,8 +100,17 @@ class AgenceregionalController extends Controller
    */
   public function destroy($id)
   {
-    
+    try {
+      // $direction = Direction::findOrFail(request('direction_id'));
+      Agenceregional::destroy(request('agenceregional_id'));
+      //$direction->delete();
+      session()->flash('danger', "Agence Regionale supprimé avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
+    return redirect()->route('agenceregional.index');
   }
+  
   
 }
 

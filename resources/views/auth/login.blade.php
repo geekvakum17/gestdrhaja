@@ -38,8 +38,8 @@
 						<input type="checkbox" class="custom-control-input" id="customCheck1">
 						<label class="custom-control-label" for="customCheck1">Enregistrer les identifiants.</label>
 					</div> -->
-					<button class="btn btn-block btn-primary mb-4">  S'identifier </button>
-					
+					<button type="submit" class="btn btn-primary"> S'identifier </button>
+
 					<!-- <div class="text-center">
 						<p class="mb-0 text-muted">Vous n’avez pas de compte? <a href="auth-signup-img-side.html" class="f-w-400">S'inscrire</a></p>
 					</div> -->

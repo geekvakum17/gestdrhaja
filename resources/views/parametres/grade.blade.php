@@ -54,8 +54,8 @@
                                             {{ $item->libelle }}
                                         </td>
                                         <td>
-                                            <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                            <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                            <a href="#!" data-grade_id="{{ $item->id }}" data-libelle="{{ $item->libelle }}" data-toggle="modal" data-target="#editModal" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Modification </a>
+                                            <a href="#!" data-grade_id="{{ $item->id }}" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Suppression </a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -99,11 +99,92 @@
     </div>
 </div>
 </div>
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modifier un Grade</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ route('grade.update',':id') }}">
+                    @method('put')
+                    @csrf()
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="floating-label" for="Name">libelle</label>
+                                    <input type="text" class="form-control" id="libelle" name="libelle" placeholder="libelle">
+                                </div>
+                            </div>
+                            <input type="hidden" name="grade_id" id="grade_id">
+
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Modifier</button>
+                    <button class="btn btn-danger">Annuller</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-danger fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel16" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h4 class="modal-title text-white" id="myModalLabel16">Supprimer un Grade</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{ Form::open(['route'=> ['grade.destroy',':id'], 'files'=>true , 'method' => 'POST']) }}
+                @method('delete')
+                @csrf
+                <div class="modal-body">
+                    <p class="text-center">
+                        Êtes-vous sûr de vouloir le supprimer ?
+                    </p>
+                    <input type="hidden" name="grade_id" id="grade_id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Non, Annuler
+                    </button>
+                    <button type="submit" class="btn btn-warning">Oui, Supprimer</button>
+                </div>
+                {{ Form::close() }}
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @section('js')
 <script>
     // DataTable start
     $('#report-table').DataTable();
     // DataTable end
+</script>
+<script>
+    $('#editModal').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget);
+        var grade_id = button.data('grade_id');
+        var libelle = button.data('libelle');
+        var modal = $(this);
+        modal.find('.modal-body #grade_id').val(grade_id);
+        modal.find('.modal-body #libelle').val(libelle);
+    });
+
+    $('#deleteModal').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget);
+        var grade_id = button.data('grade_id');
+        console.log(11);
+        var modal = $(this);
+        modal.find('.modal-body #grade_id').val(grade_id);
+    });
 </script>
 @endsection

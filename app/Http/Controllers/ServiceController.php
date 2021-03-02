@@ -81,6 +81,19 @@ class ServiceController extends Controller
    */
   public function update($id)
   {
+    try {
+      $service = Service::findOrFail(request('service_id'));
+      $service->update([
+        'libelle'     => request('libelle'),
+        'lieuservice' => request('lieuservice'),
+        'descriptionservice' => request('descriptionservice'),
+      ]);
+      session()->flash('info', "Service {$service->libelle} modifié avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
+
+    return redirect()->route('services.index');
     
   }
 
@@ -92,7 +105,15 @@ class ServiceController extends Controller
    */
   public function destroy($id)
   {
-    
+    try {
+      // $direction = Direction::findOrFail(request('direction_id'));
+      Service::destroy(request('service_id'));
+      //$direction->delete();
+      session()->flash('danger', "Service supprimé avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
+    return redirect()->route('services.index');
   }
   
 }

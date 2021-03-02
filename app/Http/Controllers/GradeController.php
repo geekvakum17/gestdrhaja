@@ -81,7 +81,17 @@ class GradeController extends Controller
    */
   public function update($id)
   {
-    
+    try {
+      $grade = Grade::findOrFail(request('grade_id'));
+      $grade->update([
+        'libelle'     => request('libelle'),
+      ]);
+      session()->flash('info', "Grade {$grade->libelle} modifié avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
+
+    return redirect()->route('grade.index');
   }
 
   /**
@@ -92,7 +102,15 @@ class GradeController extends Controller
    */
   public function destroy($id)
   {
-    
+    try {
+      // $direction = Direction::findOrFail(request('direction_id'));
+      Grade::destroy(request('grade_id'));
+      //$direction->delete();
+      session()->flash('danger', "Grade supprimé avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
+    return redirect()->route('grade.index');
   }
   
 }

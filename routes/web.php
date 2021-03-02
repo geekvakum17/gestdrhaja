@@ -40,6 +40,7 @@ Route::resource('agenceregional', 'AgenceregionalController');
 Route::resource('grade', 'GradeController');
 Route::resource('sousdirection', 'SousdirectionController');
 Route::resource('services', 'ServiceController');
+Route::resource('user', 'UserController');
 /* route('login')
 route('register')
 route('logout') */

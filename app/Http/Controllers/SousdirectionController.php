@@ -81,7 +81,19 @@ class SousdirectionController extends Controller
    */
   public function update($id)
   {
+    try {
+      $sousdirection = Sousdirection::findOrFail(request('sousdirection_id'));
+      $sousdirection->update([
+        'libelle'     => request('libelle'),
+        'lieudirection' => request('lieudirection'),
+        'description' => request('description'),
+      ]);
+      session()->flash('info', "Sous-direction {$sousdirection->libelle} modifié avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
 
+    return redirect()->route('sousdirection.index');
   }
 
   /**
@@ -92,9 +104,19 @@ class SousdirectionController extends Controller
    */
   public function destroy($id)
   {
+    try {
+      // $direction = Direction::findOrFail(request('direction_id'));
+      Sousdirection::destroy(request('sousdirection_id'));
+      //$direction->delete();
+      session()->flash('danger', "Sous-direction supprimé avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
+    return redirect()->route('sousdirection.index');
+  }
 
   }
 
-}
+
 
 ?>
