@@ -46,7 +46,7 @@
                                          <th>DATE DE NAISSANCE</th>
                                          <th>SITUATION MATRIMONIAL</th>
                                          <th>LIEUX DE NAISSANCE</th>
-                                         <th>NIVEAU D'ETUDE</th>
+                                       {{--   <th>NIVEAU D'ETUDE</th>
                                          <th>GRADE</th>
                                          <th>VILLE DE RESIDENCE</th>
                                          <th>SUPERIEUR HIERACHIQUE</th>
@@ -61,7 +61,7 @@
                                          <th>CONTACT</th>
                                          <th>E-MAIL</th>
                                          <th>PASSWORD</th>
-                                         <th>ACTIONS</th>
+                                         <th>ACTIONS</th> --}}
                                      </tr>
                                  </thead>
                                  <tbody>
@@ -160,19 +160,19 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Nom et Prénom</label><br>
-                                 <input type="text" class="form-control" id="nomprenom" name="nomprenom" placeholder="Nom er Prénom">
+                                 <input type="text" class="form-control" id="nomprenom" name="nomprenom" placeholder="Nom er Prénom" required>
                              </div>
                          </div>
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Date de Naissance</label><br>
-                                 <input type="date" class="form-control" id="datenaissance" name="datenaissance" placeholder="Date de Naissance">
+                                 <input type="date" class="form-control" id="datenaissance" name="datenaissance" placeholder="Date de Naissance" required>
                              </div>
                          </div>
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Situation Matrimoniale</label><br>
-                                 <select class="mb-3 form-control" name="situationmatri" id="situationmatri">
+                                 <select class="mb-3 form-control" name="situationmatri" id="situationmatri" required>
                                      <option>-Veuillez Sélectionner-</option>
                                      <option value="Célibataire">Célibataire</option>
                                      <option value="En concubinage">En concubinage</option>
@@ -188,13 +188,13 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Lieux de Naissance</label><br>
-                                 <input type="text" class="form-control" id="lieuxnaissance" name="lieuxnaissance" placeholder="Lieux de Naissance">
+                                 <input type="text" class="form-control" id="lieuxnaissance" name="lieuxnaissance" placeholder="Lieux de Naissance" required>
                              </div>
                          </div>
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Niveau d'etude</label><br>
-                                 <select class="mb-3 form-control" id="Niveauetude" name="Niveauetude">
+                                 <select class="mb-3 form-control" id="Niveauetude" name="Niveauetude" required>
                                      <option>-Veuillez Sélectionner-</option>
                                      <option value="BAC">BAC</option>
                                      <option value="BAC+1">BAC+1</option>
@@ -209,7 +209,7 @@
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Grade</label><br>
-                                 <select class="mb-3 form-control" id="grade_id" name="grade_id">
+                                 <select class="mb-3 form-control" id="grade_id" name="grade_id" required>
                                      <option>-Veuillez Sélectionner-</option>
                                      @foreach($grade as $item )
                                      <option value="{{ $item->id}}">{{ $item->libelle }}</option>
@@ -222,13 +222,13 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Ville de Résidence</label><br>
-                                 <input type="text" class="form-control" id="villeresidence" name="villeresidence" placeholder="Ville de Résidence">
+                                 <input type="text" class="form-control" id="villeresidence" name="villeresidence" placeholder="Ville de Résidence" required>
                              </div>
                          </div>
-                         <div class="col-sm-4">
+                         {{-- <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Supérieur Hiérachique</label><br>
-                                 <select class="mb-3 form-control" id="suphierachique" name="suphierachique">
+                                 <select class="mb-3 form-control" id="suphierachique" name="suphierachique" required>
                                      <option>-Veuillez Sélectionner-</option>
                                      <option value="Chef de service">Chef de service</option>
                                      <option value="Sous-Directeur">Sous-Directeur</option>
@@ -238,11 +238,11 @@
                                  </select>
                                  <!-- <input type="text" class="form-control" id="suphierachique" name="suphierachique" placeholder="Supérieur Hiérachique"> -->
                              </div>
-                         </div>
+                         </div> --}}
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Date de Prise de Service</label><br>
-                                 <input type="date" class="form-control" id="datepriseservice" name="datepriseservice" placeholder="Date de Prise de Service">
+                                 <input type="date" class="form-control" id="datepriseservice" name="datepriseservice" placeholder="Date de Prise de Service" required>
                              </div>
                          </div>
                      </div><br>
@@ -250,7 +250,7 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Nombre d'Enfants</label><br>
-                                 <select class="mb-3 form-control" id="nbrenfant" name="nbrenfant">
+                                 <select class="mb-3 form-control" id="nbrenfant" name="nbrenfant" required>
                                      <option>-Veuillez Sélectionner-</option>
                                      <option value="00">Aucun</option>
                                      <option value="01">01</option>
@@ -272,7 +272,7 @@
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Agence Regional</label><br>
-                                 <select class="form-control" name="agenceregional_id" id="agenceregional_id">
+                                 <select class="form-control" name="agenceregional_id" id="agenceregional_id" required>
                                      <option>-Veuillez Sélectionner-</option>
                                      @foreach($agence as $item )
                                      <option value="{{ $item->id}}">{{ $item->libelle }}</option>
@@ -286,21 +286,11 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Poste</label><br>
-                                 <select class="mb-3 form-control" id="poste" name="poste">
+                                 <select class="mb-3 form-control" id="poste" name="poste" required>
                                      <option>-Veuillez Sélectionner-</option>
-                                     <option value="Communicateur">Communicateur</option>
-                                     <option value="Agent d'Accueil">Agent d'Accueil</option>
-                                     <option value="Conseiller Emploi">Conseiller Emploi</option>
-                                     <option value="Comptable">Comptable</option>
-                                     <option value="Assistante De Direction">Assistante De Direction</option>
-                                     <option value="Chauffeur">Chauffeur</option>
-                                     <option value="Logisticien">Logisticien</option>
-                                     <option value="Informaticien">Informaticien</option>
-                                     <option value="Archiviste">Archiviste</option>
-                                     <option value="Inforgraphe">Inforgraphe</option>
-                                     <option value="Chef de Service">Chef de Service</option>
-                                     <option value="Sous-Directeur">Sous-Directeur</option>
-                                     <option value="Directeur">Directeur</option>
+                                     @foreach($role as $item )
+                                     <option value="{{ $item->id}}">{{ $item->name }}</option>
+                                     @endforeach
                                  </select>
                                  <!-- <input type="text" class="form-control" id="poste" name="poste" placeholder="Poste"> -->
                              </div>
@@ -310,7 +300,7 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Direction</label><br>
-                                 <select class="form-control" id="direction_id" name="direction_id">
+                                 <select class="form-control" id="direction_id" name="direction_id" required>
                                      <option>-Veuillez Sélectionner-</option>
                                      @foreach($direction as $item )
                                      <option value="{{ $item->id}}">{{ $item->libelle }}</option>
@@ -324,7 +314,7 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Sous-Direction</label><br>
-                                 <select class="form-control" id="sous-direction_id" name="sous-direction_id">
+                                 <select class="form-control" id="sous-direction_id" name="sous-direction_id" required>
                                      <option>-Veuillez Sélectionner-</option>
                                      @foreach($sousdirection as $item )
                                      <option value="{{ $item->id}}">{{ $item->libelle }}</option>
@@ -337,7 +327,7 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Service</label><br>
-                                 <select class="form-control" id="sous-direction_id" name="sous-direction_id">
+                                 <select class="form-control" id="sous-direction_id" name="sous-direction_id" required>
                                      <option>-Veuillez Sélectionner-</option>
                                      @foreach($sousdirection as $item )
                                      <option value="{{ $item->id}}">{{ $item->libelle }}</option>
@@ -353,21 +343,21 @@
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Contact</label><br>
-                                 <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact">
+                                 <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact" required>
                              </div>
                          </div>
 
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">E-mail</label><br>
-                                 <input type="text" class="form-control" id="email" name="email" placeholder="E-mail">
+                                 <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" required>
                              </div>
                          </div>
 
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Mot de Passe</label><br>
-                                 <input type="text" class="form-control" id="password" name="password" placeholder="Mot de Passe">
+                                 <input type="text" class="form-control" id="password" name="password" placeholder="Mot de Passe" required>
                              </div>
                          </div>
 

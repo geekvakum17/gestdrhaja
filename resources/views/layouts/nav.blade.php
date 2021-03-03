@@ -67,6 +67,7 @@
 						<!-- <li><a href="user-profile.html">Profile</a></li> -->
 						<!-- <li><a href="user-card.html">User Card</a></li> -->
 						<li><a href="{{ route('user.index') }}">Liste de Utilisateurs</a></li>
+						<li><a href="{{ route('poste.index') }}">Poste</a></li>
 					</ul>
 				</li>
 				{{-- <li class="nav-item pcoded-menu-caption">
