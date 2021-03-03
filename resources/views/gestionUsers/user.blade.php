@@ -250,7 +250,22 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Nombre d'Enfants</label><br>
-                                 <input type="text" class="form-control" id="nbrenfant" name="nbrenfant" placeholder="Nombre d'Enfants">
+                                 <select class="mb-3 form-control" id="nbrenfant" name="nbrenfant">
+                                     <option>-Veuillez Sélectionner-</option>
+                                     <option value="00">Aucun</option>
+                                     <option value="01">01</option>
+                                     <option value="02">02</option>
+                                     <option value="03">03</option>
+                                     <option value="04">04</option>
+                                     <option value="05">05</option>
+                                     <option value="06">06</option>
+                                     <option value="07">07</option>
+                                     <option value="08">08</option>
+                                     <option value="09">09</option>
+                                     <option value="10">10</option>
+                                     <option value="Plus de 10">Plus de 10</option>
+                                 </select>
+                                 <!-- <input type="text" class="form-control" id="nbrenfant" name="nbrenfant" placeholder="Nombre d'Enfants"> -->
                              </div>
                          </div>
 
@@ -258,6 +273,7 @@
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Agence Regional</label><br>
                                  <select class="form-control" name="agenceregional_id" id="agenceregional_id">
+                                     <option>-Veuillez Sélectionner-</option>
                                      @foreach($agence as $item )
                                      <option value="{{ $item->id}}">{{ $item->libelle }}</option>
                                      @endforeach
@@ -270,29 +286,64 @@
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Poste</label><br>
-                                 <input type="text" class="form-control" id="poste" name="poste" placeholder="Poste">
+                                 <select class="mb-3 form-control" id="poste" name="poste">
+                                     <option>-Veuillez Sélectionner-</option>
+                                     <option value="Communicateur">Communicateur</option>
+                                     <option value="Agent d'Accueil">Agent d'Accueil</option>
+                                     <option value="Conseiller Emploi">Conseiller Emploi</option>
+                                     <option value="Comptable">Comptable</option>
+                                     <option value="Assistante De Direction">Assistante De Direction</option>
+                                     <option value="Chauffeur">Chauffeur</option>
+                                     <option value="Logisticien">Logisticien</option>
+                                     <option value="Informaticien">Informaticien</option>
+                                     <option value="Archiviste">Archiviste</option>
+                                     <option value="Inforgraphe">Inforgraphe</option>
+                                     <option value="Chef de Service">Chef de Service</option>
+                                     <option value="Sous-Directeur">Sous-Directeur</option>
+                                     <option value="Directeur">Directeur</option>
+                                 </select>
+                                 <!-- <input type="text" class="form-control" id="poste" name="poste" placeholder="Poste"> -->
                              </div>
                          </div>
                      </div><br>
                      <div class="row">
                          <div class="col-sm-4">
                              <div class="form-group">
-                                 <label class="floating-label" for="Name">Direction</label>
-                                 <input type="text" class="form-control" id="direction_id" name="direction_id" placeholder="Direction">
+                                 <label class="floating-label" for="Name">Direction</label><br>
+                                 <select class="form-control" id="direction_id" name="direction_id">
+                                     <option>-Veuillez Sélectionner-</option>
+                                     @foreach($direction as $item )
+                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                     @endforeach
+
+                                 </select>
+                                 <!-- <input type="text" class="form-control" id="direction_id" name="direction_id" placeholder="Direction"> -->
                              </div>
                          </div>
 
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Sous-Direction</label><br>
-                                 <input type="text" class="form-control" id="'sous-direction_id" name="sous-direction_id" placeholder="Sous-Direction">
+                                 <select class="form-control" id="sous-direction_id" name="sous-direction_id">
+                                     <option>-Veuillez Sélectionner-</option>
+                                     @foreach($sousdirection as $item )
+                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                     @endforeach
+                                 </select>
+                                 <!-- <input type="text" class="form-control" id="sous-direction_id" name="sous-direction_id" placeholder="Sous-Direction"> -->
                              </div>
                          </div>
 
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Service</label><br>
-                                 <input type="text" class="form-control" id="service_id" name="service_id" placeholder="Service">
+                                 <select class="form-control" id="sous-direction_id" name="sous-direction_id">
+                                     <option>-Veuillez Sélectionner-</option>
+                                     @foreach($sousdirection as $item )
+                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                     @endforeach
+                                 </select>
+                                 <!-- <input type="text" class="form-control" id="service_id" name="service_id" placeholder="Service"> -->
                              </div>
                          </div>
 

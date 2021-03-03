@@ -6,6 +6,7 @@ use App\Models\Agenceregional;
 use App\Models\Direction;
 use App\Models\Grade;
 use App\Models\Service;
+use App\Models\Sousdirection;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -21,10 +22,11 @@ class UserController extends Controller
   {   
     $user = User::all();
     $direction = Direction::all();
+    $sousdirection = Sousdirection::all();
     $service = Service::all();
     $grade = Grade::all();
     $agence = Agenceregional::all();   
-    return view('gestionUsers.user', compact('user', 'direction', 'service', 'grade', 'agence'));
+    return view('gestionUsers.user', compact('user', 'direction', 'service', 'grade', 'agence', 'sousdirection'));
     //dd();
   }
 
@@ -45,7 +47,34 @@ class UserController extends Controller
    */
   public function store(Request $request)
   {
-    
+    try {
+      $user = new User();
+      $user->nomprenom = $request->nomprenom;
+      $user->datenaissance = $request->datenaissance;
+      $user->situationmatri = $request->situationmatri;
+      $user->lieuxnaissance = $request->lieuxnaissance;
+      $user->Niveauetude = $request->Niveauetude;
+      $user->grade_id = $request->grade_id;
+      $user->villeresidence = $request->villeresidence;
+      $user->suphierachique = $request->suphierachique;
+      $user->datepriseservice = $request->datepriseservice;
+      $user->nbrenfant = $request->nbrenfant;
+      $user->agenceregional_id = $request->agenceregional_id;
+      $user->diplome = $request->diplome;
+      $user->poste = $request->poste;
+      $user->direction_id = $request->direction_id;
+      $user->email = $request->email;
+      $user->password = $request->password;
+      $user->contact = $request->contact;
+      $user->service_id = $request->service_id;
+      $user->sousdirection_id = $request->sousdirection_id;
+      $user->save();
+      session()->flash('success', "Utilisateur {$user->nomprenom} ajouté avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
+
+    return redirect()->route('user.index');
   }
 
   /**
