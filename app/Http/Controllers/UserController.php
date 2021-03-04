@@ -51,7 +51,7 @@ class UserController extends Controller
   {
 
         $this->validate(request(), [
-            'nomprenom' => 'sometimes|required',
+            'name' => 'sometimes|required',
             'email' => 'sometimes|required|email|unique:users',
             'password' => 'sometimes',
         ]);
@@ -65,7 +65,7 @@ class UserController extends Controller
         try {
 
             $user = new User();
-            $user->nomprenom = $request->nomprenom;
+            $user->name = $request->name;
             $user->datenaissance = $request->datenaissance;
             $user->situationmatri = $request->situationmatri;
             $user->lieuxnaissance = $request->lieuxnaissance;
@@ -89,7 +89,7 @@ class UserController extends Controller
             $role_r = Role::where('id', '=', $request->poste)->firstOrFail();
             $user->assignRole($role_r);
 
-            session()->flash('success', "Utilisateur {$user->nomprenom} ajouté avec succès !!!");
+            session()->flash('success', "Utilisateur {$user->name} ajouté avec succès !!!");
             
         } catch (\Exception $e) {
 

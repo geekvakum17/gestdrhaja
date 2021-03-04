@@ -35,7 +35,7 @@
                                  @include('inc.flash')
                              </div>
                              <div class="col-sm-6 text-right">
-                                 <button class="btn btn-success btn-sm btn-round has-ripple" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add Department</button>
+                                 <button class="btn btn-success btn-sm btn-round has-ripple" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Ajouter un Utilisateur</button>
                              </div>
                          </div>
                          <div class="table-responsive">
@@ -46,7 +46,7 @@
                                          <th>DATE DE NAISSANCE</th>
                                          <th>SITUATION MATRIMONIAL</th>
                                          <th>LIEUX DE NAISSANCE</th>
-                                       {{--   <th>NIVEAU D'ETUDE</th>
+                                         {{-- <th>NIVEAU D'ETUDE</th>
                                          <th>GRADE</th>
                                          <th>VILLE DE RESIDENCE</th>
                                          <th>SUPERIEUR HIERACHIQUE</th>
@@ -157,18 +157,21 @@
                      </div>
              </div><br> -->
                      <div class="row">
+
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Nom et Prénom</label><br>
-                                 <input type="text" class="form-control" id="nomprenom" name="nomprenom" placeholder="Nom er Prénom" required>
+                                 <input type="text" class="form-control" id="name" name="name" placeholder="Nom et Prénom" required>
                              </div>
                          </div>
+
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Date de Naissance</label><br>
                                  <input type="date" class="form-control" id="datenaissance" name="datenaissance" placeholder="Date de Naissance" required>
                              </div>
                          </div>
+
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Situation Matrimoniale</label><br>
@@ -183,70 +186,18 @@
                                  <!-- <input type="text" class="form-control" id="situationmatri" name="situationmatri" placeholder="Situation Matrimoniale"> -->
                              </div>
                          </div>
+
                      </div><br>
+
                      <div class="row">
+
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Lieux de Naissance</label><br>
                                  <input type="text" class="form-control" id="lieuxnaissance" name="lieuxnaissance" placeholder="Lieux de Naissance" required>
                              </div>
                          </div>
-                         <div class="col-sm-4">
-                             <div class="form-group">
-                                 <label class="floating-label" for="Name">Niveau d'etude</label><br>
-                                 <select class="mb-3 form-control" id="Niveauetude" name="Niveauetude" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     <option value="BAC">BAC</option>
-                                     <option value="BAC+1">BAC+1</option>
-                                     <option value="BAC+2">BAC+2</option>
-                                     <option value="BAC+3">BAC+3</option>
-                                     <option value="BAC+4">BAC+4</option>
-                                     <option value="BAC+5">BAC+5</option>
-                                     <option value="BAC+6 et plus">BAC+6 et plus</option>
-                                 </select>
-                             </div>
-                         </div>
-                         <div class="col-sm-4">
-                             <div class="form-group fill">
-                                 <label class="floating-label" for="Name">Grade</label><br>
-                                 <select class="mb-3 form-control" id="grade_id" name="grade_id" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     @foreach($grade as $item )
-                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
-                                     @endforeach
-                                 </select>
-                             </div>
-                         </div>
-                     </div><br>
-                     <div class="row">
-                         <div class="col-sm-4">
-                             <div class="form-group">
-                                 <label class="floating-label" for="Name">Ville de Résidence</label><br>
-                                 <input type="text" class="form-control" id="villeresidence" name="villeresidence" placeholder="Ville de Résidence" required>
-                             </div>
-                         </div>
-                         {{-- <div class="col-sm-4">
-                             <div class="form-group">
-                                 <label class="floating-label" for="Name">Supérieur Hiérachique</label><br>
-                                 <select class="mb-3 form-control" id="suphierachique" name="suphierachique" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     <option value="Chef de service">Chef de service</option>
-                                     <option value="Sous-Directeur">Sous-Directeur</option>
-                                     <option value="Directeur">Directeur</option>
-                                     <option value="Administrateur Adjoint">Administrateur Adjoint</option>
-                                     <option value="Administrateur">Administrateur</option>
-                                 </select>
-                                 <!-- <input type="text" class="form-control" id="suphierachique" name="suphierachique" placeholder="Supérieur Hiérachique"> -->
-                             </div>
-                         </div> --}}
-                         <div class="col-sm-4">
-                             <div class="form-group fill">
-                                 <label class="floating-label" for="Name">Date de Prise de Service</label><br>
-                                 <input type="date" class="form-control" id="datepriseservice" name="datepriseservice" placeholder="Date de Prise de Service" required>
-                             </div>
-                         </div>
-                     </div><br>
-                     <div class="row">
+
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Nombre d'Enfants</label><br>
@@ -269,6 +220,76 @@
                              </div>
                          </div>
 
+                         <div class="col-sm-4">
+                             <div class="form-group">
+                                 <label class="floating-label" for="Name">Niveau d'etude</label><br>
+                                 <select class="mb-3 form-control" id="Niveauetude" name="Niveauetude" required>
+                                     <option>-Veuillez Sélectionner-</option>
+                                     <option value="BAC">BAC</option>
+                                     <option value="BAC+1">BAC+1</option>
+                                     <option value="BAC+2">BAC+2</option>
+                                     <option value="BAC+3">BAC+3</option>
+                                     <option value="BAC+4">BAC+4</option>
+                                     <option value="BAC+5">BAC+5</option>
+                                     <option value="BAC+6 et plus">BAC+6 et plus</option>
+                                 </select>
+                             </div>
+                         </div>
+
+                     </div><br>
+
+                     <div class="row">
+
+                         <div class="col-sm-4">
+                             <div class="form-group">
+                                 <label class="floating-label" for="Name">Diplome</label><br>
+                                 <select class="mb-3 form-control" id="diplome" name="diplome" required>
+                                     <option>-Veuillez Sélectionner-</option>
+                                     <option value="BEPC">BEPC</option>
+                                     <option value="BAC A1">BAC A1</option>
+                                     <option value="BAC A2">BAC A2</option>
+                                     <option value="BAC D">BAC D</option>
+                                     <option value="BAC C">BAC C</option>
+                                     <option value="BTS">BTS</option>
+                                     <option value="DUT">DUT</option>
+                                     <option value="LICENCE">LICENCE</option>
+                                     <option value="MAITRISE">MAITRISE</option>
+                                     <option value="MASTER">MASTER</option>
+                                     <option value="BACHELOR">BACHELOR</option>
+                                 </select>
+                                 <!-- <input type="text" class="form-control" id="suphierachique" name="suphierachique" placeholder="Supérieur Hiérachique"> -->
+                             </div>
+                         </div>
+
+                         <div class="col-sm-4">
+                             <div class="form-group fill">
+                                 <label class="floating-label" for="Name">Grade</label><br>
+                                 <select class="mb-3 form-control" id="grade_id" name="grade_id" required>
+                                     <option>-Veuillez Sélectionner-</option>
+                                     @foreach($grade as $item )
+                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                     @endforeach
+                                 </select>
+                             </div>
+                         </div>
+
+                         <div class="col-sm-4">
+                             <div class="form-group fill">
+                                 <label class="floating-label" for="Name">Date de Prise de Service</label><br>
+                                 <input type="date" class="form-control" id="datepriseservice" name="datepriseservice" placeholder="Date de Prise de Service" required>
+                             </div>
+                         </div>
+
+                     </div><br>
+
+                     <div class="modal-header">
+                         <h5 class="modal-title">Ajouter un Utilisateur</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                         </button>
+                     </div>
+
+                     <div class="row">
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Agence Regional</label><br>
