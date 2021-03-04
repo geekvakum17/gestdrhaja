@@ -65,11 +65,11 @@ class UserController extends Controller
         try {
 
             $user = new User();
-            $user->name = $request->name;
+            $user->name = $request->nomprenom;
             $user->datenaissance = $request->datenaissance;
             $user->situationmatri = $request->situationmatri;
             $user->lieuxnaissance = $request->lieuxnaissance;
-            $user->Niveauetude = $request->Niveauetude;
+            $user->niveauetude = $request->Niveauetude;
             $user->grade_id = $request->grade_id;
             $user->villeresidence = $request->villeresidence;
             $user->suphierachique = $request->suphierachique;
@@ -92,7 +92,6 @@ class UserController extends Controller
             session()->flash('success', "Utilisateur {$user->name} ajouté avec succès !!!");
             
         } catch (\Exception $e) {
-
             session()->flash('warning', $e->getMessage());
 
         }
