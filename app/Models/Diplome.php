@@ -10,6 +10,6 @@ class Diplome extends Model
     use HasFactory;
     protected $table = 'diplome';
     public $timestamps = true;
-    protected $fillable = array('libelle');
-    protected $visible = array('libelle');
+    protected $fillable = array('libelle', 'description');
+    protected $visible = array('libelle', 'description');
 }
