@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agenceregional;
+use App\Models\Diplome;
 use App\Models\Direction;
 use App\Models\Grade;
+use App\Models\Niveauetude;
 use App\Models\Service;
 use App\Models\Sousdirection;
 use Illuminate\Http\Request;
@@ -28,7 +30,9 @@ class UserController extends Controller
     $grade = Grade::all();
     $agence = Agenceregional::all();
     $role = Role::get();
-    return view('gestionUsers.user', compact('user', 'direction', 'service', 'grade', 'agence', 'sousdirection','role'));
+    $diplome = Diplome::all();
+    $niveauetude = Niveauetude::all();
+    return view('gestionUsers.user', compact('user', 'direction', 'service', 'grade', 'agence', 'sousdirection','role', 'diplome', 'niveauetude'));
     //dd();
   }
 

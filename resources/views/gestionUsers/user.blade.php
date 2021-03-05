@@ -140,7 +140,7 @@
      <div class="modal-dialog modal-xl"> modal-xl
          <div class="modal-content">
              <div class="modal-header">
-                 <h5 class="modal-title">Ajouter un Utilisateur</h5>
+                 <h5 class="modal-title">Informations Personnelles</h5>
                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                  </button>
@@ -225,13 +225,9 @@
                                  <label class="floating-label" for="Name">Niveau d'etude</label><br>
                                  <select class="mb-3 form-control" id="Niveauetude" name="Niveauetude" required>
                                      <option>-Veuillez Sélectionner-</option>
-                                     <option value="BAC">BAC</option>
-                                     <option value="BAC+1">BAC+1</option>
-                                     <option value="BAC+2">BAC+2</option>
-                                     <option value="BAC+3">BAC+3</option>
-                                     <option value="BAC+4">BAC+4</option>
-                                     <option value="BAC+5">BAC+5</option>
-                                     <option value="BAC+6 et plus">BAC+6 et plus</option>
+                                     @foreach($niveauetude as $item )
+                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                     @endforeach
                                  </select>
                              </div>
                          </div>
@@ -245,51 +241,84 @@
                                  <label class="floating-label" for="Name">Diplome</label><br>
                                  <select class="mb-3 form-control" id="diplome" name="diplome" required>
                                      <option>-Veuillez Sélectionner-</option>
-                                     <option value="BEPC">BEPC</option>
-                                     <option value="BAC A1">BAC A1</option>
-                                     <option value="BAC A2">BAC A2</option>
-                                     <option value="BAC D">BAC D</option>
-                                     <option value="BAC C">BAC C</option>
-                                     <option value="BTS">BTS</option>
-                                     <option value="DUT">DUT</option>
-                                     <option value="LICENCE">LICENCE</option>
-                                     <option value="MAITRISE">MAITRISE</option>
-                                     <option value="MASTER">MASTER</option>
-                                     <option value="BACHELOR">BACHELOR</option>
-                                 </select>
-                                 <!-- <input type="text" class="form-control" id="suphierachique" name="suphierachique" placeholder="Supérieur Hiérachique"> -->
-                             </div>
-                         </div>
-
-                         <div class="col-sm-4">
-                             <div class="form-group fill">
-                                 <label class="floating-label" for="Name">Grade</label><br>
-                                 <select class="mb-3 form-control" id="grade_id" name="grade_id" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     @foreach($grade as $item )
+                                     @foreach($diplome as $item )
                                      <option value="{{ $item->id}}">{{ $item->libelle }}</option>
                                      @endforeach
                                  </select>
-                             </div>
-                         </div>
-
-                         <div class="col-sm-4">
-                             <div class="form-group fill">
-                                 <label class="floating-label" for="Name">Date de Prise de Service</label><br>
-                                 <input type="date" class="form-control" id="datepriseservice" name="datepriseservice" placeholder="Date de Prise de Service" required>
+                                 <!-- <input type="text" class="form-control" id="suphierachique" name="suphierachique" placeholder="Supérieur Hiérachique"> -->
                              </div>
                          </div>
 
                      </div><br>
 
                      <div class="modal-header">
-                         <h5 class="modal-title">Ajouter un Utilisateur</h5>
-                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                             <span aria-hidden="true">&times;</span>
-                         </button>
-                     </div>
+                         <h5 class="modal-title">Informations Professionnelles</h5>
+                     </div><br>
 
                      <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="floating-label" for="Name">Direction</label><br>
+                                <select class="form-control" id="direction_id" name="direction_id" required>
+                                    <option>-Veuillez Sélectionner-</option>
+                                    @foreach($direction as $item )
+                                    <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="floating-label" for="Name">Sous-Direction</label><br>
+                                <select class="form-control" id="sous-direction_id" name="sous-direction_id" required>
+                                    <option>-Veuillez Sélectionner-</option>
+                                    @foreach($sousdirection as $item )
+                                    <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                    @endforeach
+                                </select>
+                                <!-- <input type="text" class="form-control" id="sous-direction_id" name="sous-direction_id" placeholder="Sous-Direction"> -->
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="floating-label" for="Name">Service</label><br>
+                                <select class="form-control" id="sous-direction_id" name="sous-direction_id" required>
+                                    <option>-Veuillez Sélectionner-</option>
+                                    @foreach($service as $item )
+                                    <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                    @endforeach
+                                </select>
+                                <!-- <input type="text" class="form-control" id="service_id" name="service_id" placeholder="Service"> -->
+                            </div>
+                        </div>
+
+                    </div><br>
+
+                     <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Grade</label><br>
+                                <select class="mb-3 form-control" id="grade_id" name="grade_id" required>
+                                    <option>-Veuillez Sélectionner-</option>
+                                    @foreach($grade as $item )
+                                    <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Date de Prise de Service</label><br>
+                                <input type="date" class="form-control" id="datepriseservice" name="datepriseservice" placeholder="Date de Prise de Service" required>
+                            </div>
+                        </div>
+
+
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Agence Regional</label><br>
@@ -298,68 +327,27 @@
                                      @foreach($agence as $item )
                                      <option value="{{ $item->id}}">{{ $item->libelle }}</option>
                                      @endforeach
-
                                  </select>
                                  <!-- <input type="text" class="form-control" id="agenceregional_id" name="agenceregional_id" placeholder="Agence Regional"> -->
                              </div>
                          </div>
 
-                         <div class="col-sm-4">
-                             <div class="form-group">
-                                 <label class="floating-label" for="Name">Poste</label><br>
-                                 <select class="mb-3 form-control" id="poste" name="poste" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     @foreach($role as $item )
-                                     <option value="{{ $item->id}}">{{ $item->name }}</option>
-                                     @endforeach
-                                 </select>
-                                 <!-- <input type="text" class="form-control" id="poste" name="poste" placeholder="Poste"> -->
-                             </div>
-                         </div>
                      </div><br>
+
                      <div class="row">
-                         <div class="col-sm-4">
-                             <div class="form-group">
-                                 <label class="floating-label" for="Name">Direction</label><br>
-                                 <select class="form-control" id="direction_id" name="direction_id" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     @foreach($direction as $item )
-                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
-                                     @endforeach
 
-                                 </select>
-                                 <!-- <input type="text" class="form-control" id="direction_id" name="direction_id" placeholder="Direction"> -->
-                             </div>
-                         </div>
-
-                         <div class="col-sm-4">
-                             <div class="form-group">
-                                 <label class="floating-label" for="Name">Sous-Direction</label><br>
-                                 <select class="form-control" id="sous-direction_id" name="sous-direction_id" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     @foreach($sousdirection as $item )
-                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
-                                     @endforeach
-                                 </select>
-                                 <!-- <input type="text" class="form-control" id="sous-direction_id" name="sous-direction_id" placeholder="Sous-Direction"> -->
-                             </div>
-                         </div>
-
-                         <div class="col-sm-4">
-                             <div class="form-group">
-                                 <label class="floating-label" for="Name">Service</label><br>
-                                 <select class="form-control" id="sous-direction_id" name="sous-direction_id" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     @foreach($sousdirection as $item )
-                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
-                                     @endforeach
-                                 </select>
-                                 <!-- <input type="text" class="form-control" id="service_id" name="service_id" placeholder="Service"> -->
-                             </div>
-                         </div>
-
-                     </div><br>
-                     <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="floating-label" for="Name">Poste</label><br>
+                                <select class="mb-3 form-control" id="poste" name="poste" required>
+                                    <option>-Veuillez Sélectionner-</option>
+                                    @foreach($role as $item )
+                                    <option value="{{ $item->id}}">{{ $item->name }}</option>
+                                    @endforeach
+                                </select>
+                                <!-- <input type="text" class="form-control" id="poste" name="poste" placeholder="Poste"> -->
+                            </div>
+                        </div>
 
                          <div class="col-sm-4">
                              <div class="form-group fill">
@@ -367,6 +355,14 @@
                                  <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact" required>
                              </div>
                          </div>
+
+                     </div><br>
+
+                     <div class="modal-header">
+                        <h5 class="modal-title">Pramètres de Connexion</h5>
+                    </div><br>
+
+                     <div class="row">
 
                          <div class="col-sm-4">
                              <div class="form-group">
@@ -378,20 +374,11 @@
                          <div class="col-sm-4">
                              <div class="form-group fill">
                                  <label class="floating-label" for="Name">Mot de Passe</label><br>
-                                 <input type="text" class="form-control" id="password" name="password" placeholder="Mot de Passe" required>
+                                 <input type="password" class="form-control" id="password" name="password" placeholder="Mot de Passe" required>
                              </div>
                          </div>
 
                      </div><br>
-                     <!-- <div class="row">
-                         <div class="col-sm-12">
-                             <div class="form-group">
-                                 <label class="floating-label" for="Description">Description</label>
-                                 <textarea class="form-control" id="Description" rows="3"></textarea>
-                             </div>
-
-                         </div>
-                     </div> -->
                      <button class="btn btn-primary">Ajouter</button>
                      <button class="btn btn-danger">Annuller</button>
 
