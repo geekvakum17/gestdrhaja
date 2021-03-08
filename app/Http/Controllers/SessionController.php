@@ -59,6 +59,7 @@ class SessionController extends Controller
         return view('session.recovery');
     }
 
+
     protected function guard()
     {
         return Auth::guard();
