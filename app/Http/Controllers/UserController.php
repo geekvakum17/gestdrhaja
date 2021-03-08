@@ -69,7 +69,7 @@ class UserController extends Controller
         try {
 
             $user = new User();
-            $user->name = $request->nomprenom;
+            $user->nomprenom = $request->nomprenom;
             $user->datenaissance = $request->datenaissance;
             $user->situationmatri = $request->situationmatri;
             $user->lieuxnaissance = $request->lieuxnaissance;
@@ -133,6 +133,34 @@ class UserController extends Controller
    */
   public function update($id)
   {
+
+    try {
+      $user = User::findOrFail(request('user_id'));
+      $user->update([
+          'nomprenom'     => request('nomprenom'),
+          'datenaissance' => request('datenaissance'),
+          'situationmatri'     => request('situationmatri'),
+          'lieuxnaissance' => request('lieuxnaissance'),
+          'nomprenom'     => request('nomprenom'),
+          'datenaissance' => request('datenaissance'),
+          'nomprenom'     => request('nomprenom'),
+          'datenaissance' => request('datenaissance'),
+          'nomprenom'     => request('nomprenom'),
+          'datenaissance' => request('datenaissance'),
+          'nomprenom'     => request('nomprenom'),
+          'datenaissance' => request('datenaissance'),
+          'nomprenom'     => request('nomprenom'),
+          'datenaissance' => request('datenaissance'),
+          'nomprenom'     => request('nomprenom'),
+          'datenaissance' => request('datenaissance'),
+      ]);
+      session()->flash('info', "Utilisateur {$user->libelle} modifié avec succès !!!");
+  } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+  }
+
+  return redirect()->route('user.index');
+  
 
   }
 
