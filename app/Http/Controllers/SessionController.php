@@ -31,6 +31,7 @@ class SessionController extends Controller
             session()->flash('warning','Aucun compte ne correspond à cet utilisateur. Veuillez contacter l\'administrateur');
             return back();
         }
+
         $data = request(['email', 'password']);
 
         if(!auth()->attempt($data)){
