@@ -40,7 +40,6 @@ class SessionController extends Controller
         }
 
         session()->flash('success','Bienvenue');
-
         return redirect()->home();
     }
 
