@@ -8,6 +8,11 @@ use App\Models\Sousdirection;
 class SousdirectionController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
   /**
    * Display a listing of the resource.
    *
@@ -47,7 +52,7 @@ class SousdirectionController extends Controller
     }catch(\Exception $e){
         session()->flash('warning',$e->getMessage());
     }
-  
+
   return redirect()->route('sousdirection.index');
   }
 

@@ -1,12 +1,17 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Grade;
 
-class GradeController extends Controller 
+class GradeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
   /**
    * Display a listing of the resource.
@@ -26,7 +31,7 @@ class GradeController extends Controller
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -46,9 +51,9 @@ class GradeController extends Controller
     }catch(\Exception $e){
         session()->flash('warning',$e->getMessage());
     }
-  
+
   return redirect()->route('grade.index');
-    
+
   }
 
   /**
@@ -59,7 +64,7 @@ class GradeController extends Controller
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -70,7 +75,7 @@ class GradeController extends Controller
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -112,7 +117,7 @@ class GradeController extends Controller
     }
     return redirect()->route('grade.index');
   }
-  
+
 }
 
 ?>

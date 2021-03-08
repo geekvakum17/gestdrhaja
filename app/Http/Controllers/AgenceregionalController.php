@@ -1,12 +1,16 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Agenceregional;
 
-class AgenceregionalController extends Controller 
+class AgenceregionalController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
   /**
    * Display a listing of the resource.
@@ -26,7 +30,7 @@ class AgenceregionalController extends Controller
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -45,7 +49,7 @@ class AgenceregionalController extends Controller
     }catch(\Exception $e){
         session()->flash('warning',$e->getMessage());
     }
-  
+
   return redirect()->route('agenceregional.index');
   }
 
@@ -57,7 +61,7 @@ class AgenceregionalController extends Controller
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -68,7 +72,7 @@ class AgenceregionalController extends Controller
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -110,8 +114,8 @@ class AgenceregionalController extends Controller
     }
     return redirect()->route('agenceregional.index');
   }
-  
-  
+
+
 }
 
 ?>

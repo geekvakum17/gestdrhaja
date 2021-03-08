@@ -11,10 +11,16 @@ use App\Models\Service;
 use App\Models\Sousdirection;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
   /**
    * Display a listing of the resource.
@@ -84,7 +90,7 @@ class UserController extends Controller
             $user->poste = $request->poste;
             $user->direction_id = $request->direction_id;
             $user->email = $request->email;
-            $user->password = $request->password;
+            $user->password = Hash::make($request->password);
             $user->contact = $request->contact;
             $user->service_id = $request->service_id;
             $user->sousdirection_id = $request->sousdirection_id;
@@ -94,7 +100,7 @@ class UserController extends Controller
             $user->assignRole($role_r);
 
             session()->flash('success', "Utilisateur {$user->name} ajouté avec succès !!!");
-            
+
         } catch (\Exception $e) {
             session()->flash('warning', $e->getMessage());
 
@@ -160,7 +166,7 @@ class UserController extends Controller
   }
 
   return redirect()->route('user.index');
-  
+
 
   }
 

@@ -7,6 +7,10 @@ use Spatie\Permission\Models\Role;
 
 class PosteController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     //https://spatie.be/docs/laravel-permission/v3/installation-laravel
     public function index()

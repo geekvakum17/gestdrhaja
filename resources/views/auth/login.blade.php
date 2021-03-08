@@ -10,7 +10,7 @@
 			</div>
 		</div>
 		<div class="auth-side-form">
-			<form method="POST" action="{{ route('login') }}">
+			<form method="POST" action="{{ route('session.login') }}">
 				@csrf
 				<div class=" auth-content">
 					<img src="assets/images/auth/auth-logo-dark.png" alt="" class="img-fluid mb-4 d-block d-xl-none d-lg-none">

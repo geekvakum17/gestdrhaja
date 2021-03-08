@@ -1,12 +1,16 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
 
-class ServiceController extends Controller 
+class ServiceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
   /**
    * Display a listing of the resource.
@@ -17,7 +21,7 @@ class ServiceController extends Controller
   {
     $service = Service::all();
     return view('parametres.services', compact('service'));
-    
+
   }
 
   /**
@@ -27,7 +31,7 @@ class ServiceController extends Controller
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -47,7 +51,7 @@ class ServiceController extends Controller
     }catch(\Exception $e){
         session()->flash('warning',$e->getMessage());
     }
-  
+
   return redirect()->route('services.index');
   }
 
@@ -59,7 +63,7 @@ class ServiceController extends Controller
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -70,7 +74,7 @@ class ServiceController extends Controller
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -94,7 +98,7 @@ class ServiceController extends Controller
     }
 
     return redirect()->route('services.index');
-    
+
   }
 
   /**
@@ -115,7 +119,7 @@ class ServiceController extends Controller
     }
     return redirect()->route('services.index');
   }
-  
+
 }
 
 ?>

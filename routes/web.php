@@ -41,6 +41,9 @@ Route::resource('grade', 'GradeController');
 Route::resource('sousdirection', 'SousdirectionController');
 Route::resource('services', 'ServiceController');
 Route::resource('user', 'UserController');
+Route::group(['prefix'=>'Session','as'=>'session.'], function () {
+    Route::post('/login', 'SessionController@login')->name('login');
+});
 /* route('login')
 route('register')
 route('logout') */
