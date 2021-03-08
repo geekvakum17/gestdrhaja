@@ -15,7 +15,7 @@ class SessionController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+      //  $this->middleware('auth');
     }
 
     public function login()
@@ -34,12 +34,11 @@ class SessionController extends Controller
 
         $data = request(['email', 'password']);
 
-
-
         if(!auth()->attempt($data)){
             session()->flash('warning','Votre adresse électronique ou votre mot de passe est incorrecte');
             return back();
         }
+
         session()->flash('success','Bienvenue');
 
         return redirect()->home();
