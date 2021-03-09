@@ -83,6 +83,31 @@
 						<li><a href="{{ route('grade.index') }}">Grade</a></li>
 					</ul>
 				</li>
+
+				<li class="nav-item pcoded-hasmenu">
+					<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-folder"></i></span><span class="pcoded-mtext">Document Administratif</span></a>
+					<ul class="pcoded-submenu">
+						<li><a href="{{ route('direction.index') }}">Demandez un Document</a></li>
+						<li><a href="{{ route('sousdirection.index') }}">Liste de mes demandes</a></li>
+					</ul>
+				</li>
+
+				<li class="nav-item pcoded-hasmenu">
+					<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-award"></i></span><span class="pcoded-mtext">Congé</span></a>
+					<ul class="pcoded-submenu">
+						<li><a href="{{ route('direction.index') }}">Demandez un Congé</a></li>
+						<li><a href="{{ route('sousdirection.index') }}">Liste de mes demandes</a></li>
+					</ul>
+				</li>
+
+				<li class="nav-item pcoded-hasmenu">
+					<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-mail"></i></span><span class="pcoded-mtext">Messageries</span></a>
+					<ul class="pcoded-submenu">
+						<li><a href="{{ route('direction.index') }}">Envoyé Un Message</a></li>
+						<li><a href="{{ route('sousdirection.index') }}">Boîte de Recption</a></li>
+						<li><a href="{{ route('sousdirection.index') }}">Message Envoyé</a></li>
+					</ul>
+				</li>
 				{{-- <li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user-check"></i></span><span class="pcoded-mtext">Membership</span></a>
 						<ul class="pcoded-submenu">

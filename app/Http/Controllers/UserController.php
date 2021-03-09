@@ -178,8 +178,17 @@ class UserController extends Controller
    */
   public function destroy($id)
   {
-
-  }
+    try {
+        
+        User::destroy(request('user_id'));
+        //$direction->delete();
+        session()->flash('danger', "Utilisateur supprimé avec succès !!!");
+      } catch (\Exception $e) {
+        session()->flash('warning', $e->getMessage());
+      }
+      return redirect()->route('user.index');
+    }
+  
 
 }
 

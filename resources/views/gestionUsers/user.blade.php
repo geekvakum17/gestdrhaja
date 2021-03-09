@@ -46,7 +46,6 @@
                                          <th>POSTE</th>
                                          <th>CONTACT</th>
                                          <th>E-MAIL</th>
-                                         <th>MOT DE PASSE</th>
                                          <th>ACTIONS</th>
                                      </tr>
                                  </thead>
@@ -59,7 +58,6 @@
                                          <td>{{ $item->poste }}</td>
                                          <td>{{ $item->contact }}</td>
                                          <td>{{ $item->email }}</td>
-                                         <td>{{ $item->password }}</td>
                                          <td> 
                                             <button
                                                 data-user_id="{{ $item->id }}" 
@@ -67,7 +65,6 @@
                                                 data-poste="{{ $item->poste }}" 
                                                 data-contact="{{ $item->contact }}" 
                                                 data-email="{{ $item->email }}" 
-                                                data-password="{{ $item->password }}"
                                                 data-grade="{{ App\Models\Grade::find($item->grade_id)->libelle  }}"
                                                 data-toggle="modal" 
                                                 data-target="#editModal" 
@@ -605,6 +602,36 @@
                     <button class="btn btn-danger">Annuller</button>
 
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-danger fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel16" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h4 class="modal-title text-white" id="myModalLabel16">Supprimer Un Utilisateur</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{ Form::open(['route'=> ['user.destroy',':id'], 'files'=>true , 'method' => 'POST']) }}
+                @method('delete')
+                @csrf
+                <div class="modal-body">
+                    <p class="text-center">
+                        Êtes-vous sûr de vouloir le supprimer ?
+                    </p>
+                    <input type="hidden" name="user_id" id="user_id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Non, Annuler
+                    </button>
+                    <button type="submit" class="btn btn-warning">Oui, Supprimer</button>
+                </div>
+                {{ Form::close() }}
             </div>
         </div>
     </div>
