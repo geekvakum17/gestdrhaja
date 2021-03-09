@@ -5,7 +5,6 @@
 			<a href="#!" class="b-brand">
 				<!-- ========   change your logo hear   ============ -->
 				<img src="{{ asset('assets/images/aej.png') }}" class="rounded-circle" style="width: 100px; height:60px" alt="" class="logo"><br>
-
 			</a>
 			<a href="#!" class="mob-toggler">
 				<i class="feather icon-more-vertical"></i>
