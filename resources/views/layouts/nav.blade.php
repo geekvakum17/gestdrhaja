@@ -74,7 +74,7 @@
 						<label>Admin Panel <span class="pcoded-badge badge badge-danger">NEW</span><span class="pcoded-badge badge badge-warning">HOT</span></label>
 					</li>  --}}
 				<li class="nav-item pcoded-hasmenu">
-					<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-crop"></i></span><span class="pcoded-mtext">Paramètres</span></a>
+					<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-sliders"></i></span><span class="pcoded-mtext">Paramètres</span></a>
 					<ul class="pcoded-submenu">
 						<li><a href="{{ route('direction.index') }}">Direction</a></li>
 						<li><a href="{{ route('sousdirection.index') }}">Sous - Direction</a></li>
