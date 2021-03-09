@@ -5,7 +5,6 @@
 			<a href="#!" class="b-brand">
 				<!-- ========   change your logo hear   ============ -->
 				<img src="{{ asset('assets/images/aej.png') }}" class="rounded-circle" style="width: 100px; height:60px" alt="" class="logo"><br>
-
 			</a>
 			<a href="#!" class="mob-toggler">
 				<i class="feather icon-more-vertical"></i>
@@ -102,7 +101,15 @@
 								<li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Mon profile</a></li>
 								<li><a href="#" class="dropdown-item"><i class="feather icon-users"></i> Gestion Utilisateurs</a></li>
 								<li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-crop"></i> Paramètres</a></li>
-								<li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+								<li>
+                                    {{--<a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Déconnexion</a>--}}
+                                    <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="feather icon-lock"></i>{{ __('Déconnexion') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
 							</ul>
 						</div>
 					</div>
