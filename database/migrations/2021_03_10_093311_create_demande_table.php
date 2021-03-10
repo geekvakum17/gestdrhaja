@@ -16,6 +16,7 @@ class CreateDemandeTable extends Migration {
 			$table->date('datefin')->nullable();
 			$table->string('dureeconge', 100)->nullable();
 			$table->date('datereprise')->nullable();
+			$table->integer('statu_id')->unsigned();
 		});
 	}
 

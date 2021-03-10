@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Models;
+namespace app/model;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Demande extends Model
+class Demande extends Model 
 {
-    use HasFactory;
+
     protected $table = 'demande';
     public $timestamps = true;
 

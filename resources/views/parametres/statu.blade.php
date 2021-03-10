@@ -12,11 +12,11 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">CONGES </h5>
+                            <h5 class="m-b-10">STATU</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">CONGES</a></li>
+                            <li class="breadcrumb-item"><a href="#!">STATU</a></li>
                             <!-- <li class="breadcrumb-item"><a href="#!">Department</a></li> -->
                         </ul>
                     </div>
@@ -36,31 +36,29 @@
 
                             </div>
                             <div class="col-sm-6 text-right">
-                                <button class="btn btn-success btn-sm btn-round has-ripple" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Demandez un Congé</button>
+                                <button class="btn btn-success btn-sm btn-round has-ripple" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Ajout de Grade</button>
                             </div>
-                            <br>
                         </div>
                         <div class="table-responsive">
                             <table id="report-table" class="table table-bordered table-striped mb-0">
                                 <thead>
                                     <tr>
-                                        <th>libelle</th>
+                                        <th>Libelle</th>
                                         <th width="50%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach($roles as $item) --}}
+                                     @foreach($statu as $item)
                                     <tr>
                                         <td>
-                                            {{-- {{ $item->name }} --}}
+                                            {{ $item->libelle }}
                                         </td>
                                         <td>
-                                            <!-- <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a> -->
-                                            {{-- <a href="#!" data-id="{{ $item->id }}" data-libelle="{{ $item->name }}" data-toggle="modal" data-target="#editModal" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Modification </a> --}}
-                                            {{-- <a href="#!" data-id="{{ $item->id }}" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Suppression </a> --}}
+                                            <a href="#!" data-statu_id="{{ $item->id }}" data-libelle="{{ $item->libelle }}" data-toggle="modal" data-target="#editModal" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Modification </a>
+                                            <a href="#!" data-statu_id="{{ $item->id }}" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Suppression </a>
                                         </td>
                                     </tr>
-                                    {{-- @endforeach --}}
+                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -76,32 +74,21 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Ajouter Poste</h5>
+                <h5 class="modal-title">Ajout Un Statu</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('poste.store') }}">
+                <form method="POST" action="{{ route('statu.store') }}">
                     @csrf()
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="floating-label" for="Name">libelle</label>
-                                <input type="text" class="form-control" id="libelle" name="name" placeholder="">
+                                <input type="text" class="form-control" id="Name" name="libelle" placeholder="libelle">
                             </div>
                         </div>
-                        {{-- <div class="col-sm-6">
-                            <div class="form-group fill">
-                                <label class="floating-label" for="Icon">Icon</label>
-                                <input type="file" class="form-control" id="Icon" placeholder="sdf">
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="floating-label" for="Description">Description</label>
-                                <textarea class="form-control" id="Description" rows="3"></textarea>
-                            </div> --}}
 
                     </div>
                     <button class="btn btn-primary">Ajouter</button>
@@ -117,37 +104,25 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modifier Poste</h5>
+                <h5 class="modal-title">Modifier un Statu</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('poste.update',':id') }}">
+                <form method="POST" action="{{ route('statu.update',':id') }}">
                     @method('put')
                     @csrf()
                     <div class="row">
                         <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="floating-label" for="Name">libelle</label>
-                                    <input type="text" class="form-control" id="libelle" name="name" placeholder="libelle">
+                                    <input type="text" class="form-control" id="libelle" name="libelle" placeholder="libelle">
                                 </div>
                             </div>
-                            <input type="hidden" name="agenceregional_id" id="agenceregional_id">
-                            <!-- <div class="col-sm-6">
-                                <div class="form-group fill">
-                                    <label class="floating-label" for="Icon"></label>
-                                    <input type="text" class="form-control" id="lieuservice" name="lieuservice" placeholder="lieuservice">
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label class="floating-label" for="Description">Description</label>
-                                    <textarea class="form-control" id="descriptionservice" name="descriptionservice" rows="3"></textarea>
-                                </div>
+                            <input type="hidden" name="statu_id" id="statu_id">
 
-                            </div> -->
                         </div>
                     </div>
                     <button class="btn btn-primary">Modifier</button>
@@ -162,20 +137,20 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-danger">
-                <h4 class="modal-title text-white" id="myModalLabel16">Supprimer Poste</h4>
+                <h4 class="modal-title text-white" id="myModalLabel16">Supprimer un Statu</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
             <div class="modal-body">
-                {{ Form::open(['route'=> ['poste.destroy',':id'], 'files'=>true , 'method' => 'POST']) }}
+                {{ Form::open(['route'=> ['statu.destroy',':id'], 'files'=>true , 'method' => 'POST']) }}
                 @method('delete')
                 @csrf
                 <div class="modal-body">
                     <p class="text-center">
                         Êtes-vous sûr de vouloir le supprimer ?
                     </p>
-                    <input type="hidden" name="id" id="id">
+                    <input type="hidden" name="statu_id" id="statu_id">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Non, Annuler
@@ -197,19 +172,19 @@
 <script>
     $('#editModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget);
-        var id = button.data('id');
+        var statu_id = button.data('statu_id');
         var libelle = button.data('libelle');
         var modal = $(this);
-        modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #statu_id').val(statu_id);
         modal.find('.modal-body #libelle').val(libelle);
     });
 
     $('#deleteModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget);
-        var id = button.data('id');
-        console.log(id);
+        var statu_id = button.data('statu_id');
+        console.log(11);
         var modal = $(this);
-        modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #statu_id').val(statu_id);
     });
 </script>
 @endsection

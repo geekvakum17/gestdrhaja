@@ -36,6 +36,7 @@ Route::resource('direction', 'DirectionController');
 
 Route::resource('poste', 'PosteController');
 Route::resource('demande', 'DemandeController');
+Route::resource('statu', 'StatuController');
 
 Route::resource('agenceregional', 'AgenceregionalController');
 Route::resource('grade', 'GradeController');

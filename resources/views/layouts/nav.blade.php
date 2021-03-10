@@ -51,6 +51,7 @@
                         <li><a href="{{ route('services.index') }}">Services</a></li>
                         <li><a href="{{ route('agenceregional.index') }}">Agence Régionale</a></li>
                         <li><a href="{{ route('grade.index') }}">Grade</a></li>
+                        <li><a href="{{ route('statu.index') }}">Statu</a></li>
                     </ul>
                 </li>
                 @else
@@ -58,7 +59,7 @@
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-award"></i></span><span class="pcoded-mtext">Congé</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="">Demandez un Congé</a></li>
+                        <li><a href="{{ route('demande.index') }}">Demandez un Congé</a></li>
                         <li><a href="">Liste de mes demandes</a></li>
                     </ul>
                 </li>
