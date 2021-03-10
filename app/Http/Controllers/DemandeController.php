@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Demande;
 
 class DemandeController extends Controller 
 {
@@ -12,9 +13,17 @@ class DemandeController extends Controller
    *
    * @return Response
    */
+
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
+  
   public function index()
   {
-    
+    $demande = Demande::all();
+    return view('Conges.demande', compact('demande'));
   }
 
   /**
@@ -24,7 +33,7 @@ class DemandeController extends Controller
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -34,7 +43,21 @@ class DemandeController extends Controller
    */
   public function store(Request $request)
   {
-    
+    try{
+      $demande = new Demande();
+      $demande->fonctionIterim = $request->fonctionIterim;
+      $demande->datedebut = $request->datedebut;
+      $demande->datefin = $request->datefin;
+      $demande->dureeconge = $request->dureeconge;
+      $demande->datereprise = $request->datereprise;
+      $demande->statu_id = $request->statu_id;
+      $demande->save();
+      session()->flash('success',"Demande Faite avec succès !!!");
+    }catch(\Exception $e){
+        session()->flash('warning',$e->getMessage());
+    }
+
+  return redirect()->route('demande.index');
   }
 
   /**

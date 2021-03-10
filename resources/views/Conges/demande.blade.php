@@ -36,7 +36,7 @@
 
                             </div>
                             <div class="col-sm-6 text-right">
-                                <button class="btn btn-success btn-sm btn-round has-ripple" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Demandez un Congé</button>
+                                <button class="btn btn-success btn-sm btn-round has-ripple" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Demander un Congé</button>
                             </div>
                             <br>
                         </div>
@@ -44,23 +44,42 @@
                             <table id="report-table" class="table table-bordered table-striped mb-0">
                                 <thead>
                                     <tr>
-                                        <th>libelle</th>
+                                        <th>FONCTION DE L'INTERIM</th>
+                                        <th>DATE DE DEBUT</th>
+                                        <th>DATE DE FIN</th>
+                                        <th>DUREE DU CONGE</th>
+                                        <th>DATE DE REPRISE</th>
+                                        <th>STATU DE LA DEMANDE</th>
                                         <th width="50%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach($roles as $item) --}}
+                                     @foreach($demande as $item) 
                                     <tr>
                                         <td>
-                                            {{-- {{ $item->name }} --}}
+                                            {{ $item->fonctionIterim }}
                                         </td>
                                         <td>
-                                            <!-- <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a> -->
-                                            {{-- <a href="#!" data-id="{{ $item->id }}" data-libelle="{{ $item->name }}" data-toggle="modal" data-target="#editModal" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Modification </a> --}}
-                                            {{-- <a href="#!" data-id="{{ $item->id }}" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Suppression </a> --}}
+                                            {{ $item->datedebut }}
+                                        </td>
+                                        <td>
+                                            {{ $item->datefin }}
+                                        </td>
+                                        <td>
+                                            {{ $item->dureeconge }}
+                                        </td>
+                                        <td>
+                                            {{ $item->datereprise }}
+                                        </td>
+                                        <td>
+                                            {{ $item->statu_id}}
+                                        </td>
+                                        <td>
+                                            <a href="#!" data-demande_id="{{ $item->demande_id }}" data-fonctionIterim="{{ $item->fonctionIterim }}"   data-datedebut="{{ $item->datedebut }}"  data-datefin="{{ $item->datefin }}" data-dureeconge="{{ $item->dureeconge }}" data-datereprise="{{ $item->datereprise }}"  data-toggle="modal" data-target="#editModal" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Modification </a> 
+                                            <a href="#!" data-demande_id="{{ $item->demande_id }}" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Suppression </a>
                                         </td>
                                     </tr>
-                                    {{-- @endforeach --}}
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -73,38 +92,61 @@
     </div>
 </div>
 <div class="modal fade" id="modal-report" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Ajouter Poste</h5>
+                <h5 class="modal-title">Demander un Congé</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('poste.store') }}">
+                <form method="POST" action="{{ route('demande.store') }}">
                     @csrf()
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-4">
                             <div class="form-group">
-                                <label class="floating-label" for="Name">libelle</label>
-                                <input type="text" class="form-control" id="libelle" name="name" placeholder="">
+                                <label class="floating-label" for="Name">Fonction de l'Itérim</label><br>
+                                <input type="text" class="form-control" id="fonctionIterim" name="fonctionIterim" placeholder="">
                             </div>
                         </div>
-                        {{-- <div class="col-sm-6">
+
+                        <div class="col-sm-4">
                             <div class="form-group fill">
-                                <label class="floating-label" for="Icon">Icon</label>
-                                <input type="file" class="form-control" id="Icon" placeholder="sdf">
+                                <label class="floating-label" for="Name">Date de Début</label><br>
+                                <input type="date" class="form-control" id="datedebut" name="datedebut" placeholder="">
                             </div>
                         </div>
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="floating-label" for="Description">Description</label>
-                                <textarea class="form-control" id="Description" rows="3"></textarea>
-                            </div> --}}
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Date de Fin</label><br>
+                                <input type="date" class="form-control" id="datefin" name="datefin" placeholder="">
+                            </div>
+                        </div>
 
                     </div>
-                    <button class="btn btn-primary">Ajouter</button>
+
+                    <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Durée du Congé</label><br>
+                                <input type="text" class="form-control" id="dureeconge" name="dureeconge" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Date de Reprise</label><br>
+                                <input type="date" class="form-control" id="datereprise" name="datereprise" placeholder="">
+                            </div>
+                        </div>
+                                <input type="hidden" class="form-control" id="statu_id" name="statu_id" value="3">
+                          
+
+                    </div>
+                    <button class="btn btn-primary">Demander</button>
                     <button class="btn btn-danger">Annuller</button>
             </div>
             </form>
@@ -117,38 +159,58 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modifier Poste</h5>
+                <h5 class="modal-title">Modifier Congé</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('poste.update',':id') }}">
+                <form method="POST" action="{{ route('demande.update',':id') }}">
                     @method('put')
                     @csrf()
                     <div class="row">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label class="floating-label" for="Name">libelle</label>
-                                    <input type="text" class="form-control" id="libelle" name="name" placeholder="libelle">
-                                </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="floating-label" for="Name">Fonction de l'Itérim</label><br>
+                                <input type="text" class="form-control" id="fonctionIterim" name="fonctionIterim" placeholder="">
+                                <input type="date" class="form-control" id="datedebut" name="datedebut" placeholder="">
                             </div>
-                            <input type="hidden" name="agenceregional_id" id="agenceregional_id">
-                            <!-- <div class="col-sm-6">
-                                <div class="form-group fill">
-                                    <label class="floating-label" for="Icon"></label>
-                                    <input type="text" class="form-control" id="lieuservice" name="lieuservice" placeholder="lieuservice">
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label class="floating-label" for="Description">Description</label>
-                                    <textarea class="form-control" id="descriptionservice" name="descriptionservice" rows="3"></textarea>
-                                </div>
-
-                            </div> -->
                         </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Date de Début</label><br>
+                                <input type="date" class="form-control" id="datedebut" name="datedebut" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Date de Fin</label><br>
+                                <input type="date" class="form-control" id="datefin" name="datefin" placeholder="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Durée du Congé</label><br>
+                                <input type="text" class="form-control" id="dureeconge" name="dureeconge" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Date de Reprise</label><br>
+                                <input type="date" class="form-control" id="datereprise" name="datereprise" placeholder="">
+                            </div>
+                        </div>
+                                <input type="hidden" class="form-control" id="demande_id" name="demande_id">
+                          
+
                     </div>
                     <button class="btn btn-primary">Modifier</button>
                     <button class="btn btn-danger">Annuller</button>
@@ -168,14 +230,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                {{ Form::open(['route'=> ['poste.destroy',':id'], 'files'=>true , 'method' => 'POST']) }}
+                {{ Form::open(['route'=> ['demande.destroy',':id'], 'files'=>true , 'method' => 'POST']) }}
                 @method('delete')
                 @csrf
                 <div class="modal-body">
                     <p class="text-center">
                         Êtes-vous sûr de vouloir le supprimer ?
                     </p>
-                    <input type="hidden" name="id" id="id">
+                    <input type="hidden" class="form-control" id="demande_id" name="demande_id">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Non, Annuler
@@ -197,11 +259,19 @@
 <script>
     $('#editModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget);
-        var id = button.data('id');
-        var libelle = button.data('libelle');
+        var demande_id = button.data('demande_id');
+        var fonctionIterim = button.data('fonctionIterim');
+        var datedebut = button.data('datedebut');
+        var datefin = button.data('datefin');
+        var dureeconge = button.data('dureeconge');
+        var datereprise = button.data('datereprise');
         var modal = $(this);
-        modal.find('.modal-body #id').val(id);
-        modal.find('.modal-body #libelle').val(libelle);
+        modal.find('.modal-body #demande_id').val(demande_id);
+        modal.find('.modal-body #fonctionIterim').val(fonctionIterim);
+        modal.find('.modal-body #datedebut').val(datedebut);
+        modal.find('.modal-body #datefin').val(datefin);
+        modal.find('.modal-body #dureeconge').val(dureeconge);
+        modal.find('.modal-body #datereprise').val(datereprise);
     });
 
     $('#deleteModal').on('show.bs.modal', function(event) {
