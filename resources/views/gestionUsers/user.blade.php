@@ -42,6 +42,7 @@
                              <table id="report-table" class="table table-bordered table-striped mb-0">
                                  <thead>
                                      <tr>
+                                         <th>MATRICULE</th>
                                          <th>NOM ET PRENOM</th>
                                          <th>POSTE</th>
                                          <th>CONTACT</th>
@@ -52,6 +53,9 @@
                                  <tbody>
                                     @foreach($user as $item)
                                      <tr>
+                                        <td>
+                                            {{ $item->matricules }}
+                                         </td>
                                          <td>
                                             {{ $item->nomprenom }}
                                          </td>

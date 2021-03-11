@@ -76,6 +76,7 @@ class UserController extends Controller
 
             $user = new User();
             $user->nomprenom = $request->nomprenom;
+            $user->matricule = $request->matricule;
             $user->datenaissance = $request->datenaissance;
             $user->situationmatri = $request->situationmatri;
             $user->lieuxnaissance = $request->lieuxnaissance;
