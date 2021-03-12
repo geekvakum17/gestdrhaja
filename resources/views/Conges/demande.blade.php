@@ -44,7 +44,8 @@
                             <table id="report-table" class="table table-bordered table-striped mb-0">
                                 <thead>
                                     <tr>
-                                        <th>FONCTION DE L'INTERIM</th>
+                                        <th>NOM ET PRENOM DE L'INTERIM</th>
+                                        
                                         <th>DATE DE DEBUT</th>
                                         <th>DATE DE FIN</th>
                                         <th>DUREE DU CONGE</th>
@@ -57,13 +58,14 @@
                                      @foreach($demande as $item) 
                                     <tr>
                                         <td>
-                                            {{ $item->fonctionIterim }}
+                                            {{ $item->nomiterim }}
+                                        </td>
+                                        
+                                        <td>
+                                            {{ $item->datedebutca }}
                                         </td>
                                         <td>
-                                            {{ $item->datedebut }}
-                                        </td>
-                                        <td>
-                                            {{ $item->datefin }}
+                                            {{ $item->datefinca }}
                                         </td>
                                         <td>
                                             {{ $item->dureeconge }}
@@ -72,7 +74,7 @@
                                             {{ $item->datereprise }}
                                         </td>
                                         <td>
-                                            {{ $item->statu_id}}
+                                            {{ $item->statu}}
                                         </td>
                                         <td>
                                             <a href="#!" data-demande_id="{{ $item->demande_id }}" data-fonctionIterim="{{ $item->fonctionIterim }}"   data-datedebut="{{ $item->datedebut }}"  data-datefin="{{ $item->datefin }}" data-dureeconge="{{ $item->dureeconge }}" data-datereprise="{{ $item->datereprise }}"  data-toggle="modal" data-target="#editModal" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Modification </a> 
@@ -104,6 +106,15 @@
                 <form method="POST" action="{{ route('demande.store') }}">
                     @csrf()
                     <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="floating-label" for="Name">Nom et Prénom de l'Intérim</label><br>
+                                <input type="text" class="form-control" id="nomiterim" name="nomiterim" placeholder="">
+                            </div>
+                        </div>
+
+
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label class="floating-label" for="Name">Fonction de l'Itérim</label><br>
@@ -114,14 +125,14 @@
                         <div class="col-sm-4">
                             <div class="form-group fill">
                                 <label class="floating-label" for="Name">Date de Début</label><br>
-                                <input type="date" class="form-control" id="datedebut" name="datedebut" placeholder="">
+                                <input type="date" class="form-control" id="datedebutca" name="datedebutca" placeholder="">
                             </div>
                         </div>
 
                         <div class="col-sm-4">
                             <div class="form-group fill">
                                 <label class="floating-label" for="Name">Date de Fin</label><br>
-                                <input type="date" class="form-control" id="datefin" name="datefin" placeholder="">
+                                <input type="date" class="form-control" id="datefinca" name="datefinca" placeholder="">
                             </div>
                         </div>
 
@@ -142,7 +153,7 @@
                                 <input type="date" class="form-control" id="datereprise" name="datereprise" placeholder="">
                             </div>
                         </div>
-                                <input type="hidden" class="form-control" id="statu_id" name="statu_id" value="3">
+                                <input type="hidden" class="form-control" id="statu" name="statu" value="3">
                           
 
                     </div>

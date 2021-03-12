@@ -46,11 +46,11 @@ class DemandeController extends Controller
     try{
       $demande = new Demande();
       $demande->fonctionIterim = $request->fonctionIterim;
-      $demande->datedebut = $request->datedebut;
-      $demande->datefin = $request->datefin;
+      $demande->datedebutca = $request->datedebutca;
+      $demande->datefinca = $request->datefinca;
       $demande->dureeconge = $request->dureeconge;
       $demande->datereprise = $request->datereprise;
-      $demande->statu_id = $request->statu_id;
+      $demande->statu = $request->statu;
       $demande->save();
       session()->flash('success',"Demande Faite avec succès !!!");
     }catch(\Exception $e){
