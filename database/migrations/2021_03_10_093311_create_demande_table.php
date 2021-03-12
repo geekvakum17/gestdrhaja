@@ -12,11 +12,15 @@ class CreateDemandeTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->string('fonctionIterim', 70)->nullable();
-			$table->date('datedebut')->nullable();
-			$table->date('datefin')->nullable();
+			$table->date('datedebutca')->nullable();
+			$table->date('datefinca')->nullable();
 			$table->string('dureeconge', 100)->nullable();
 			$table->date('datereprise')->nullable();
-			$table->integer('statu_id')->unsigned();
+			$table->boolean('statu')->nullable();
+			$table->string('nomiterim', 70)->nullable();
+			$table->string('objetabsence', 100)->nullable();
+			$table->date('datedepart')->nullable();
+			$table->integer('dureeabsence')->unsigned()->nullable();
 		});
 	}
 
