@@ -33,7 +33,8 @@ class User extends Authenticatable
         'direction_id',
         'contact',
         'service_id',
-        'sousdirection_id'
+        'sousdirection_id',
+        
     ];
 
     /**

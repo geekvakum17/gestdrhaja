@@ -42,9 +42,8 @@
                              <table id="report-table" class="table table-bordered table-striped mb-0">
                                  <thead>
                                      <tr>
-                                         <th>MATRICULE</th>
+                            
                                          <th>NOM ET PRENOM</th>
-                                         <th>POSTE</th>
                                          <th>CONTACT</th>
                                          <th>E-MAIL</th>
                                          <th>ACTIONS</th>
@@ -53,20 +52,15 @@
                                  <tbody>
                                     @foreach($user as $item)
                                      <tr>
-                                        <td>
-                                            {{ $item->matricules }}
-                                         </td>
                                          <td>
                                             {{ $item->nomprenom }}
                                          </td>
-                                         <td>{{ $item->poste }}</td>
                                          <td>{{ $item->contact }}</td>
                                          <td>{{ $item->email }}</td>
                                          <td> 
                                             <button
                                                 data-user_id="{{ $item->id }}" 
                                                 data-nomprenom="{{ $item->nomprenom }}" 
-                                                data-poste="{{ $item->poste }}" 
                                                 data-contact="{{ $item->contact }}" 
                                                 data-email="{{ $item->email }}" 
                                                 data-grade="{{ App\Models\Grade::find($item->grade_id)->libelle  }}"
@@ -116,6 +110,13 @@
              </div><br> -->
                      <div class="row">
 
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="floating-label" for="Name">Matricules</label><br>
+                                <input type="text" class="form-control" id="matricule" name="matricule" placeholder="Matricule AEJ" required>
+                            </div>
+                        </div>
+
                          <div class="col-sm-4">
                              <div class="form-group">
                                  <label class="floating-label" for="Name">Nom et Prénom</label><br>
@@ -130,24 +131,26 @@
                              </div>
                          </div>
 
-                         <div class="col-sm-4">
-                             <div class="form-group fill">
-                                 <label class="floating-label" for="Name">Situation Matrimoniale</label><br>
-                                 <select class="mb-3 form-control" name="situationmatri" id="situationmatri" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     <option value="Célibataire">Célibataire</option>
-                                     <option value="En concubinage">En concubinage</option>
-                                     <option value="Marié(e)">Marié(e)</option>
-                                     <option value="Divorcée">Divorcée</option>
-                                     <option value="Veuf ou Veuve">Veuf ou Veuve</option>
-                                 </select>
-                                 <!-- <input type="text" class="form-control" id="situationmatri" name="situationmatri" placeholder="Situation Matrimoniale"> -->
-                             </div>
-                         </div>
+                         
 
                      </div><br>
 
                      <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Situation Matrimoniale</label><br>
+                                <select class="mb-3 form-control" name="situationmatri" id="situationmatri" required>
+                                    <option>-Veuillez Sélectionner-</option>
+                                    <option value="Célibataire">Célibataire</option>
+                                    <option value="En concubinage">En concubinage</option>
+                                    <option value="Marié(e)">Marié(e)</option>
+                                    <option value="Divorcée">Divorcée</option>
+                                    <option value="Veuf ou Veuve">Veuf ou Veuve</option>
+                                </select>
+                                <!-- <input type="text" class="form-control" id="situationmatri" name="situationmatri" placeholder="Situation Matrimoniale"> -->
+                            </div>
+                        </div>
 
                          <div class="col-sm-4">
                              <div class="form-group">
@@ -178,21 +181,21 @@
                              </div>
                          </div>
 
-                         <div class="col-sm-4">
-                             <div class="form-group">
-                                 <label class="floating-label" for="Name">Niveau d'etude</label><br>
-                                 <select class="mb-3 form-control" id="Niveauetude" name="Niveauetude" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     @foreach($niveauetude as $item )
-                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
-                                     @endforeach
-                                 </select>
-                             </div>
-                         </div>
-
                      </div><br>
 
                      <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="floating-label" for="Name">Niveau d'etude</label><br>
+                                <select class="mb-3 form-control" id="Niveauetude" name="Niveauetude" required>
+                                    <option>-Veuillez Sélectionner-</option>
+                                    @foreach($niveauetude as $item )
+                                    <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
 
                          <div class="col-sm-4">
                              <div class="form-group">
@@ -241,6 +244,23 @@
                         </div>
 
                         <div class="col-sm-4">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="Name">Agence Regional</label><br>
+                                <select class="form-control" name="agenceregional_id" id="agenceregional_id" required>
+                                    <option>-Veuillez Sélectionner-</option>
+                                    @foreach($agence as $item )
+                                    <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                    @endforeach
+                                </select>
+                                <!-- <input type="text" class="form-control" id="agenceregional_id" name="agenceregional_id" placeholder="Agence Regional"> -->
+                            </div>
+                        </div>
+
+                    </div><br>
+
+                     <div class="row">
+
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label class="floating-label" for="Name">Service</label><br>
                                 <select class="form-control" id="service_id" name="service_id" required>
@@ -252,10 +272,6 @@
                                 <!-- <input type="text" class="form-control" id="service_id" name="service_id" placeholder="Service"> -->
                             </div>
                         </div>
-
-                    </div><br>
-
-                     <div class="row">
 
                         <div class="col-sm-4">
                             <div class="form-group fill">
@@ -276,23 +292,28 @@
                             </div>
                         </div>
 
-
-                         <div class="col-sm-4">
-                             <div class="form-group fill">
-                                 <label class="floating-label" for="Name">Agence Regional</label><br>
-                                 <select class="form-control" name="agenceregional_id" id="agenceregional_id" required>
-                                     <option>-Veuillez Sélectionner-</option>
-                                     @foreach($agence as $item )
-                                     <option value="{{ $item->id}}">{{ $item->libelle }}</option>
-                                     @endforeach
-                                 </select>
-                                 <!-- <input type="text" class="form-control" id="agenceregional_id" name="agenceregional_id" placeholder="Agence Regional"> -->
-                             </div>
-                         </div>
-
                      </div><br>
 
                      <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label class="floating-label" for="Name">Guichet Emploi Jeunes</label><br>
+                                <select class="mb-3 form-control" id="guichet" name="guichet" required>
+                                    <option>-Veuillez Sélectionner-</option>
+                                     <option value="Aucun">Aucun</option>
+                                     <option value="Yopougon">Yopougon</option>
+                                     <option value="Abobo">Abobo</option>
+                                     <option value="Adjamé">Adjamé</option>
+                                     <option value="Marcory">Marcory</option>
+                                     <option value="Koumassi">Koumassi</option>
+                                   
+                                    
+                                   
+                                </select>
+                                <!-- <input type="text" class="form-control" id="poste" name="poste" placeholder="Poste"> -->
+                            </div>
+                        </div>
 
                         <div class="col-sm-4">
                             <div class="form-group">
