@@ -14,7 +14,7 @@ class ChangeColumnStatuToDemandeTable extends Migration
     public function up()
     {
         Schema::table('demande', function (Blueprint $table) {
-            $table->boolean('statu')->nullable();
+            //$table->boolean('statu')->nullable();
         });
     }
 

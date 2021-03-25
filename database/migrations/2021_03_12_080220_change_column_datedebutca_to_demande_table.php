@@ -14,8 +14,8 @@ class ChangeColumnDatedebutcaToDemandeTable extends Migration
     public function up()
     {
         Schema::table('demande', function (Blueprint $table) {
-           
-            $table->date('datedebutca')->nullable();
+
+           // $table->date('datedebutca')->nullable();
         });
     }
 

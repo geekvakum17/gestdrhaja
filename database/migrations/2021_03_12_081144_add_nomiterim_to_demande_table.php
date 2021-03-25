@@ -14,7 +14,7 @@ class AddNomiterimToDemandeTable extends Migration
     public function up()
     {
         Schema::table('demande', function (Blueprint $table) {
-            $table->string('nomiterim', 70)->nullable();
+           // $table->string('nomiterim', 70)->nullable();
         });
     }
 

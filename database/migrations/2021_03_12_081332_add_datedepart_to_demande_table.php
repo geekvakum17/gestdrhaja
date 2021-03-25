@@ -14,7 +14,7 @@ class AddDatedepartToDemandeTable extends Migration
     public function up()
     {
         Schema::table('demande', function (Blueprint $table) {
-            $table->date('datedepart')->nullable();
+           // $table->date('datedepart')->nullable();
         });
     }
 

@@ -14,7 +14,7 @@ class AddDureeabsenceToDemandeTable extends Migration
     public function up()
     {
         Schema::table('demande', function (Blueprint $table) {
-            $table->integer('dureeabsence')->unsigned()->nullable();
+           /// $table->integer('dureeabsence')->unsigned()->nullable();
         });
     }
 

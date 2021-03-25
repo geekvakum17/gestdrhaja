@@ -14,7 +14,7 @@ class ChangeColumnDatefincaToDemandeTable extends Migration
     public function up()
     {
         Schema::table('demande', function (Blueprint $table) {
-            $table->date('datefinca')->nullable();
+            //$table->date('datefinca')->nullable()->change();
         });
     }
 

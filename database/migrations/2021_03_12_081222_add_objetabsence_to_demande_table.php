@@ -14,7 +14,7 @@ class AddObjetabsenceToDemandeTable extends Migration
     public function up()
     {
         Schema::table('demande', function (Blueprint $table) {
-            $table->string('objetabsence', 100)->nullable();
+          //  $table->string('objetabsence', 100)->nullable();
         });
     }
 
