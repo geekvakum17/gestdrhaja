@@ -27,14 +27,14 @@
 					<div class="dropdown">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown"><i class="icon feather icon-bell"></i></a>
 						<div class="dropdown-menu dropdown-menu-right notification">
-							<div class="noti-head">
+							<!-- <div class="noti-head">
 								<h6 class="d-inline-block m-b-0">Notifications</h6>
 								<div class="float-right">
 									<a href="#!" class="m-r-10">mark as read</a>
 									<a href="#!">clear all</a>
 								</div>
-							</div>
-							<ul class="noti-body">
+							</div> -->
+							<!-- <ul class="noti-body">
 								<li class="n-title">
 									<p class="m-b-0">NEW</p>
 								</li>
@@ -77,10 +77,10 @@
 										</div>
 									</div>
 								</li>
-							</ul>
-							<div class="noti-footer">
+							</ul> -->
+							<!-- <div class="noti-footer">
 								<a href="#!">show all</a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</li>
