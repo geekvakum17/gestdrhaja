@@ -2780,14 +2780,14 @@ fieldset:disabled a.btn {
 
 .btn-success {
     color: #fff;
-    background-color: #9ccc65;
-    border-color: #9ccc65;
+    background-color: #068521;
+    border-color: #068521;
 }
 
 .btn-success:hover {
     color: #fff;
-    background-color: #8ac248;
-    border-color: #83bf3f;
+    background-color: #068521;
+    border-color: #068521;
 }
 
 .btn-success:focus, .btn-success.focus {
@@ -25294,7 +25294,7 @@ pre[class*=language-]:before {
  ===================================================================================
  ====== [ light menu style start ] ======== */
 .pcoded-navbar.menu-light {
-    background-color: #ff9834;
+    background-color: #fff;
     color: #535763;
 }
 
@@ -25345,11 +25345,11 @@ pre[class*=language-]:before {
 }
 
 .pcoded-navbar.menu-light .pcoded-submenu {
-    background: #ff9833;
+    background: #ffffff;
 }
 
 .pcoded-navbar.menu-light a {
-    color: #fff;
+    color: rgb(7, 7, 7);
 }
 
 .pcoded-navbar.menu-light.navbar-collapsed .pcoded-menu-caption:after {

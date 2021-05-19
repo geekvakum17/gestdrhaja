@@ -59,7 +59,7 @@
                 <li class="nav-item pcoded-hasmenu">
                     <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-award"></i></span><span class="pcoded-mtext">Congé</span></a>
                     <ul class="pcoded-submenu">
-                        <li><a href="">Demande d'autorisation d'Absence</a></li>
+                        <li><a href="{{ route('absence.index') }}">Demande d'autorisation d'Absence</a></li>
                         <li><a href="{{ route('demande.index') }}">Demandez un Congé</a></li>
                         <li><a href="">Liste de mes demandes</a></li>
                     </ul>

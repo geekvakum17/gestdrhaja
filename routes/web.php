@@ -38,6 +38,7 @@ Route::resource('guichet', 'GuichetController');
 
 Route::resource('poste', 'PosteController');
 Route::resource('demande', 'DemandeController');
+Route::resource('absence', 'AbsenceController');
 Route::resource('statu', 'StatuController');
 
 Route::resource('agenceregional', 'AgenceregionalController');
