@@ -13,7 +13,7 @@ class CreateAbsenceTable extends Migration {
 			$table->string('nomiterim', 255)->nullable();
 			$table->string('objetabsence', 255)->nullable();
 			$table->date('datedepart');
-			$table->datetime('dateretour');
+			$table->date('dateretour')->nullable();
 			$table->integer('nbrejourouvrable')->nullable();
 			$table->boolean('statu')->nullable();
 		});

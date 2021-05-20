@@ -9,7 +9,8 @@ class Absence extends Model
 
     protected $table = 'absence';
     public $timestamps = true;
-    protected $fillable = array('nomiterim', 'nbrejourouvrable', 'statu');
-    protected $visible = array('nomiterim', 'nbrejourouvrable', 'statu');
+    protected $fillable = array('nomiterim', 'objetabsence', 'dateretour', 'nbrejourouvrable', 'statu');
+    protected $visible = array('nomiterim', 'objetabsence', 'dateretour', 'nbrejourouvrable', 'statu');
+
 
 }

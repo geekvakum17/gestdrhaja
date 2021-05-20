@@ -42,7 +42,21 @@ class AbsenceController extends Controller
    */
   public function store(Request $request)
   {
-    
+    try {
+            $absence = new Absence();
+            $absence->nomiterim = $request->nomiterim;
+            $absence->objetabsence = $request->objetabsence;
+            $absence->datedepart = $request->datedepart;
+            $absence->dateretour = $request->dateretour;
+            $absence->nbrejourouvrable = $request->nbrejourouvrable;
+            $absence->statu = $request->statu;
+            $absence->save();
+      session()->flash('success', "Demande Faite avec succès !!!");
+    } catch (\Exception $e) {
+      session()->flash('warning', $e->getMessage());
+    }
+
+    return redirect()->route('absence.index');
   }
 
   /**
