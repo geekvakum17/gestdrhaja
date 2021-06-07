@@ -89,12 +89,12 @@
                                 <input type="text" class="form-control" id="Name" name="libelle" placeholder="libelle">
                             </div>
                         </div>
-
                     </div>
                     <button class="btn btn-primary">Ajouter</button>
                     <button class="btn btn-danger">Annuller</button>
+                </form>
             </div>
-            </form>
+
         </div>
     </div>
 </div>

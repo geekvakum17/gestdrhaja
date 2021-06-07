@@ -208,6 +208,7 @@
             modal.find('.modal-body #direction_id').val(direction_id);
             modal.find('.modal-body #libelle').val(libelle);
             modal.find('.modal-body #description').val(description);
+            console.log(direction_id);
         });
 
          $('#deleteModal').on('show.bs.modal', function (event) {

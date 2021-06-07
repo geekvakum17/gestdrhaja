@@ -43,7 +43,7 @@
                             <table id="report-table" class="table table-bordered table-striped mb-0">
                                 <thead>
                                     <tr>
-                                        <th>Libelle</thdd>
+                                        <th>Libelle</th>
                                         <th>Lieu du Service</th>
                                         <th width="50%">Description</th>
                                         <th>Action</th>
