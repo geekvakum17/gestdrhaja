@@ -30,7 +30,6 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
-
        @if (auth()->user()->hasRole('Admin'))
         <li class="nav-item">
             <div class="sidebar-title"></div>

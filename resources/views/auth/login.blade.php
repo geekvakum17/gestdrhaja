@@ -1,3 +1,4 @@
+
 @extends('auth.layouts.main')
 @section('content')
 
@@ -29,6 +30,7 @@
                 </div>
 
               </form>
+
 
   <!-- container-scroller -->
   @stop
