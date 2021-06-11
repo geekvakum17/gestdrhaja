@@ -63,7 +63,7 @@
   <!-- End plugin js for this page -->
   <!-- Custom js for this page-->
   <script src="{{asset('assets/js/dashboard.js') }}"></script>
-  <script src="{{asset('assets/js/modal-demo.js') }"></script>
+  <script src="{{asset('assets/js/modal-demo.js') }}"></script>
   <!-- End custom js for this page-->
 </body>
 

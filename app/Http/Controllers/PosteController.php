@@ -16,7 +16,7 @@ class PosteController extends Controller
     public function index()
     {
         $roles = Role::get();
-        return view('gestionUsers.poste', compact('roles'));
+        return view('parametres.poste', compact('roles'));
     }
 
     public function store(Request $request)
