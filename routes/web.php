@@ -18,30 +18,25 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 //route('dashboard');
-Route::get('/', 'DashboardController@index')->name('dashboard');
+// Route::get('/', 'DashboardController@index')->name('dashboard');
 
 Route::post('/phone', 'SessionController@store')->name('phone');
 
-Route::resource('user', 'UserController');
+// Route::resource('user', 'UserController');
 
-Route::resource('direction', 'DirectionController');
+// Route::resource('direction', 'DirectionController');
 
-Route::resource('guichet', 'GuichetController');
-
-// Route::get('/direction','DirectionController@index')->name('direction.index');
-// Route::post('/direction','DirectionController@store')->name('direction.store');
-// Route::get('/direction/create','DirectionController@create')->name('direction.create');
-// Route::get('/direction/{id}','DirectionController@edit')->name('direction.edit');
-// Route::put('/direction/{id}/update','DirectionController@update')->name('direction.update');
+// Route::resource('guichet', 'GuichetController');
 
 
 
-Route::resource('poste', 'PosteController');
+
+/* Route::resource('poste', 'PosteController');
 Route::resource('demande', 'DemandeController');
 Route::resource('absence', 'AbsenceController');
-Route::resource('statu', 'StatuController');
+Route::resource('statu', 'StatuController'); */
 
-Route::resource('agenceregional', 'AgenceregionalController');
+/* Route::resource('agenceregional', 'AgenceregionalController');
 Route::resource('grade', 'GradeController');
 Route::resource('sousdirection', 'SousdirectionController');
 Route::resource('services', 'ServiceController');
@@ -49,9 +44,24 @@ Route::resource('user', 'UserController');
 Route::group(['prefix'=>'Session','as'=>'session.'], function () {
     Route::post('/login', 'SessionController@login')->name('login');
 });
-/* route('login')
-route('register')
-route('logout') */
+ */
+Route::resource('statu', 'StatuController');
+Route::resource('grade', 'GradeController');
+Route::resource('services', 'ServiceController');
+Route::resource('guichet', 'GuichetController');
+Route::resource('agenceregional', 'AgenceregionalController');
+Route::resource('sousdirection', 'SousdirectionController');
+Route::resource('direction', 'DirectionController');
+Route::resource('poste', 'PosteController');
+Route::resource('user', 'UserController');
+
+Route::group(['prefix'=>'Session','as'=>'session.'], function () {
+    Route::post('/login', 'SessionController@login')->name('login');
+});
+
+
+
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', 'HomeController@index')->name('home');
