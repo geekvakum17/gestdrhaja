@@ -8714,7 +8714,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #a1a8c3;
+  color: #131314;
   text-align: left;
   background-color: #fff;
 }
@@ -10368,7 +10368,7 @@ pre code {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1;
-  color: #495057;
+  color: #050505;
   background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
@@ -10397,7 +10397,7 @@ pre code {
 .jsgrid .jsgrid-table .jsgrid-filter-row select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=number], .select2-container--default .select2-selection--single:focus, .select2-container--default .select2-selection--single .select2-search__field:focus, .typeahead:focus,
 .tt-query:focus,
 .tt-hint:focus {
-  color: #495057;
+  color: #0e0f0f;
   background-color: #fff;
   border-color: #80bdff;
   outline: 0;
@@ -22802,7 +22802,7 @@ code {
 .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .select2-container--default .select2-selection--single, .select2-container--default .select2-selection--single .select2-search__field, .typeahead,
 .tt-query,
 .tt-hint {
-  border: 1px solid #dde4e9;
+  border: 1.5px solid #000000;
   font-weight: 400;
   font-size: 0.875rem;
   height: auto;
@@ -22815,7 +22815,7 @@ select.tt-hint {
   padding: .4375rem .75rem;
   border: 0;
   outline: 1px solid #dde4e9;
-  color: #a7afb7;
+  color: #000000;
 }
 
 select.form-control:focus, select.asColorPicker-input:focus, .dataTables_wrapper select:focus,
@@ -24750,7 +24750,7 @@ dl li {
   border-bottom-width: 1px;
   font-weight: normal;
   font-size: 13px;
-  color: #a1a8c3;
+  color: #000000;
 }
 
 .table thead th i, .jsgrid .jsgrid-table thead th i {
@@ -24802,7 +24802,7 @@ dl li {
 }
 
 .table.table-bordered, .jsgrid .table-bordered.jsgrid-table {
-  border-top: 1px solid #dde4e9;
+  border-top: 1px solid #000000;
 }
 
 .nav-tabs .nav-link {
