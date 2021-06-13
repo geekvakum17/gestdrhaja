@@ -76,7 +76,7 @@
         </div>
 
         <div class="modal-body">
-            <form method="POST" action="{{ route('statu.store') }}">
+            <form method="POST" action="{{ route('user.store') }}">
                 @csrf()
                 <div class="modal-header">
                     <h5 class="modal-title">Informations Personnelles</h5>
@@ -95,6 +95,7 @@
                             <input type="text" class="form-control" id="nomprenom" name="nomprenom" placeholder="" required>
                         </div>
                     </div>
+
 
                     <div class="col-sm-4">
                         <div class="form-group">
@@ -225,7 +226,7 @@
 
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label class="floating-label" for="Name">Grade</label>
+                            <label class="floating-label" for="Name">Service</label>
                             <select class="form-control" id="service_id" name="service_id" required>
                                 <option>-Veuillez Sélectionner-</option>
                                 @foreach($service as $item )
@@ -237,7 +238,7 @@
 
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label class="floating-label" for="Name">Service</label>
+                            <label class="floating-label" for="Name">Grade</label>
                             <select class="mb-3 form-control" id="grade_id" name="grade_id" required>
                                 <option>-Veuillez Sélectionner-</option>
                                 @foreach($grade as $item )
@@ -310,14 +311,14 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label class="floating-label" for="Name">Mot de Passe</label>
-                            <input type="text" class="form-control" id="password" name="password" placeholder="" required>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="" required>
                         </div>
                     </div>
 
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label class="floating-label" for="Name">Confirmé votre mot de passe</label>
-                            <input type="text" class="form-control" id="password" name="password" placeholder="" required>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="" required>
                         </div>
                     </div>
 
@@ -325,7 +326,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success">Ajouter</button>
+          <button type="submit" class="btn btn-success">Ajouter</button>
           <button type="button" class="btn btn-light" data-dismiss="modal">Annuller</button>
         </div>
     </form>
