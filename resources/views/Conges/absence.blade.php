@@ -108,6 +108,8 @@
                 var end = moment(datedepart, "YYYY-MM-DD");
                 var nbrejourouvrable = moment.duration(start.diff(end)).asDays();
                 $("#nbrjour").val(nbrejourouvrable);
+
+                console.log(datedepart);
             });
 
            </script>
