@@ -8,10 +8,8 @@
         <div class="col-md-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Default form</h4>
-              <p class="card-description">
-                Demande D'autorisation d'Absence
-              </p>
+              <h4 class="card-title">Demande D'autorisation d'Absence</h4><br>
+
               <form class="forms-sample" method="POST" action="{{ route('absence.store') }}">
                 @csrf()
                 <div class="form-group">
@@ -92,20 +90,21 @@
 
         <div class="card">
              <div class="card-body">
+                <h4 class="card-title">INFO UTILE</h4><br>
                 <div class="form-group">
-                    <label for="exampleInputUsername1"><strong>INFO UTILE</strong></label><br>
-                    <p>Mariage du Travailleur...... <strong>4 jours ouvrables</strong> </p>
-                    <p>Mariage d'un de ses enfants, d'un frère, de la mère du travailleur...<strong>2 jours ouvrables</strong></p>
-                    <p>Décès du conjoint ...... <strong>5 jours ouvrables</strong></p>
-                    <p>Décès d'un enfant, du père, de la mère du travilleur...... <strong>5 jours ouvrables</strong></p>
-                    <p>Décès d'un frère ou d'une soeur...... <strong>2 jours ouvrables</strong></p>
-                    <p>Décès d'un beau-père d'une belle-mère...... <strong>2 jours ouvrables</strong></p>
-                    <p>Naissance d'un enfant...... <strong>2 jours ouvrables</strong> </p>
-                    <p>Baptême d'un enfant...... <strong>1 jours ouvrables</strong></p>
-                    <p>Prémière communion d'un enfant...... <strong>1 jours ouvrables</strong></p>
-                    <p>Déménagement...... <strong>1 jours ouvrables</strong></p>
-                    <p>Mariage du Travailleur...... <strong>4 jours ouvrables</strong></p>
-                    <p>Mariage du Travailleur...... <strong>4 jours ouvrables</strong></p>
+
+                    <p>Mariage du Travailleur............. <strong>    4 jours ouvrables</strong> </p>
+                    <p>Mariage d'un de ses enfants, d'un frère, de la mère du travailleur......<strong>   2 jours ouvrables</strong></p>
+                    <p>Décès du conjoint .............. <strong>   5 jours ouvrables</strong></p>
+                    <p>Décès d'un enfant, du père, de la mère du travilleur...... <strong>   5 jours ouvrables</strong></p>
+                    <p>Décès d'un frère ou d'une soeur...... <strong>  2 jours ouvrables</strong></p>
+                    <p>Décès d'un beau-père d'une belle-mère...... <strong>  2 jours ouvrables</strong></p>
+                    <p>Naissance d'un enfant...... <strong>   2 jours ouvrables</strong> </p>
+                    <p>Baptême d'un enfant...... <strong>  1 jours ouvrables</strong></p>
+                    <p>Prémière communion d'un enfant...... <strong>  1 jours ouvrables</strong></p>
+                    <p>Déménagement...... <strong>  1 jours ouvrables</strong></p>
+                    <p>Mariage du Travailleur...... <strong>  4 jours ouvrables</strong></p>
+                    <p>Mariage du Travailleur...... <strong>  4 jours ouvrables</strong></p>
                 </div>
              </div>
           </div>
@@ -114,10 +113,6 @@
       </div>
     </div>
  </div>
-
-
-
-
 
 
 @endsection
