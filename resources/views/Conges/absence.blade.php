@@ -64,12 +64,12 @@
 
                 <div class="form-group">
                     <label for="exampleInputUsername1">DATE DE DEPART</label>
-                    <input type="text" class="form-control" id="datedepart" name="datedepart" placeholder="">
+                    <input type="date" class="form-control" id="datedepart" name="datedepart" placeholder="">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputUsername1">DATE DE RETOUR PREVUE</label>
-                    <input type="text" class="form-control" id="dateretour" name="dateretour" placeholder="">
+                    <input type="date" class="form-control" id="dateretour" name="dateretour" placeholder="">
                 </div>
 
                 <div class="form-group">
@@ -85,6 +85,32 @@
             </div>
           </div>
         </div>
+
+        <script>
+            /*  var a = moment([2007, 0, 29]);
+            var b = moment([2007, 0, 28]);
+            console.log(a.diff(b, 'days')); */
+
+            var start = moment("2018-03-10", "YYYY-MM-DD");
+            var end = moment("2018-03-15", "YYYY-MM-DD");
+
+            //Difference in number of days
+            moment.duration(start.diff(end)).asDays();
+
+            //Difference in number of weeks
+            moment.duration(start.diff(end)).asWeeks();
+
+
+            $("#dateretour,#datedepart").change(function(){
+                var dateretour = $("#dateretour").val();
+                var datedepart = $("#datedepart").val();
+                var start = moment(dateretour, "YYYY-MM-DD");
+                var end = moment(datedepart, "YYYY-MM-DD");
+                var nbrejourouvrable = moment.duration(start.diff(end)).asDays();
+                $("#nbrjour").val(nbrejourouvrable);
+            });
+
+           </script>
 
         <div class="col-md-6 grid-margin stretch-card">
 
