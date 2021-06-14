@@ -74,7 +74,7 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="#">Autorisation d'Absence</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('absence.index') }}">Autorisation d'Absence</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Demande de Congé</a></li>
               </ul>
             </div>

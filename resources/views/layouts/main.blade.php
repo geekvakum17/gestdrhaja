@@ -13,6 +13,8 @@
   <!-- plugin css for this page -->
   <link rel="stylesheet" href="{{asset ('assets/vendors/jsgrid/jsgrid.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/vendors/jsgrid/jsgrid-theme.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/vendors/select2/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css') }}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
@@ -65,6 +67,15 @@
   <script src="{{asset('assets/js/dashboard.js') }}"></script>
   <script src="{{asset('assets/js/modal-demo.js') }}"></script>
   <!-- End custom js for this page-->
+  <!-- plugin js for this page -->
+  <script src="('assets/vendors/typeahead.js/typeahead.bundle.min.js')"></script>
+  <script src="('assets/vendors/select2/select2.min.js')"></script>
+  <!-- End plugin js for this page -->
+  <!-- Custom js for this page-->
+  <script src="{{ asset('assets/js/file-upload.js') }}"></script>
+  <script src="{{ asset('assets/js/iCheck.js') }}"></script>
+  <script src="{{ asset('assets/js/typeahead.js') }}"></script>
+  <script src="{{ asset('assets/js/select2.js') }}"></script>
 </body>
 
 </html>
