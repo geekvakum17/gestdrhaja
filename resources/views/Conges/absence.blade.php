@@ -23,31 +23,31 @@
 
                 <div class="form-check">
                     <label class="form-check-label">
-                      <input type="radio" class="form-check-input" id="objetabsence" name="objetabsence" value="Mariage" onclick="choice()" checked>
+                      <input type="radio" class="form-check-input" id="objetabsence" name="objetmariage" value="Mariage" onclick="choice()" checked>
                       Mariage
                     </label>
                 </div>&nbsp;&nbsp;
 
                 <div class="form-check">
                     <label class="form-check-label">
-                      <input type="radio" class="form-check-input" id="objetabsence" name="objetabsence" value="Naissance" onclick="choice()">
+                      <input type="radio" class="form-check-input" id="objetabsence" name="objetnaissance" value="Naissance" onclick="choice()">
                       Naissance
                     </label>
                 </div>&nbsp;&nbsp;
 
                 <div class="form-check">
                     <label class="form-check-label">
-                      <input type="radio" class="form-check-input" id="objetabsence" name="objetabsence" value="Décès" onclick="choice()">
+                      <input type="radio" class="form-check-input" id="objetabsence" name="objetdeces" value="Décès" onclick="choice()">
                       Décès
                     </label>
                 </div>&nbsp;&nbsp;
 
                 <div class="form-check">
                     <label class="form-check-label">
-                      <input type="radio" class="form-check-input" id="objetabsence3" name="objetabsence" onclick="choice()">
+                      <input type="radio" class="form-check-input" id="objetabsence3" name="objetautre" onclick="choice()">
                       Autres
                     </label>
-                    <input type="text" class="form-control" id="objetabsence4" name="objetabsence" style="display: none;">
+                    <input type="text" class="form-control" id="objetabsence4" name="objetautre" style="display: none;">
                 </div>
 
                 </div>

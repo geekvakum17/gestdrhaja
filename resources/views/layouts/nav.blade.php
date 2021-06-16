@@ -1,27 +1,6 @@
 
   <nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <div class="dropdown sidebar-profile-dropdown">
-      <a class="dropdown-toggle d-flex align-items-center justify-content-between" href="#" data-toggle="dropdown" id="profileDropdown1">
-        <img src="{{ asset('assets/images/faces/face29.png') }}"  alt="profile" class="sidebar-profile-icon"/>
-        <div>
-            <div class="nav-profile-name">Lucille Wilkins</div>
-            <div class="nav-profile-designation">Mid term business</div>
-        </div>
-      </a>
-      <div class="dropdown-menu navbar-dropdown dropdown-menu-left" aria-labelledby="profileDropdown1">
-        <a class="dropdown-item">
-          <i class="mdi mdi-account"></i>
-          Profile
-        </a>
-          <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <i class="mdi mdi-logout text-primary"></i>{{ __('Déconnexion') }}
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
 
-        </a>
-      </div>
-    </div>
     <ul class="nav">
       <li class="nav-item">
         <div class="sidebar-title"></div>
@@ -75,6 +54,7 @@
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="{{ route('absence.index') }}">Autorisation d'Absence</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('listeabsence') }}">Liste des Demandes</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Demande de Congé</a></li>
               </ul>
             </div>

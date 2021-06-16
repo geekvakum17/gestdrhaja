@@ -27,6 +27,14 @@ class AbsenceController extends Controller
 
   }
 
+  public function liste()
+  {
+    $absence = Absence::all();
+    return view('Conges.listeabsence', compact('absence'));
+
+
+  }
+
   /**
    * Show the form for creating a new resource.
    *
@@ -44,11 +52,15 @@ class AbsenceController extends Controller
    */
   public function store(Request $request)
   {
-      dd($request->all());
+      //dd($request->all());
     try {
             $absence = new Absence();
             $absence->nomiterim = $request->nomiterim;
-            $absence->objetabsence = $request->objetabsence;
+            if(isset($request->objetmariage)){$absence->objetabsence =  $request->objetmariage;}
+            if(isset($request->objetnaissance)){ $absence->objetabsence = $request->objetnaissance;}
+            if(isset($request->objetdeces)){$absence->objetabsence = $request->objetdeces;}
+            if(isset($request->objetdeces)){$absence->objetabsence = $request->objetdeces;}
+            if(isset($request->objetautre)){$absence->objetabsence = $request->objetautre;}
             $absence->datedepart = $request->datedepart;
             $absence->dateretour = $request->dateretour;
             $absence->nbrejourouvrable = $request->nbrejourouvrable;

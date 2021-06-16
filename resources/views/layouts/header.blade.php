@@ -1,7 +1,7 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="navbar-brand-wrapper align-items-center">
-      <a class="navbar-brand brand-logo" href="index.html"><img src="{{ asset('assets/images/aej.png') }}" class="rounded-circle" style="width: 100px; height:60px" alt="logo"/></a>
-      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('assets/images/aej.png') }}" alt="logo"/></a>
+      <a class="navbar-brand brand-logo" href=""><img src="{{ asset('assets/images/aej.png') }}" class="rounded-circle" style="width: 100px; height:60px" alt="logo"/></a>
+      <a class="navbar-brand brand-logo-mini" href=""><img src="{{ asset('assets/images/aej.png') }}" alt="logo"/></a>
       <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="mdi mdi-sort-variant"></span>
         </button>
