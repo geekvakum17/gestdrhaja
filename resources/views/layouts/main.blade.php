@@ -68,14 +68,16 @@
   <script src="{{asset('assets/js/modal-demo.js') }}"></script>
   <!-- End custom js for this page-->
   <!-- plugin js for this page -->
-  <script src="('assets/vendors/typeahead.js/typeahead.bundle.min.js')"></script>
-  <script src="('assets/vendors/select2/select2.min.js')"></script>
+  <script src="{{ asset('assets/vendors/typeahead.js/typeahead.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendors/select2/select2.min.js') }}"></script>
   <!-- End plugin js for this page -->
   <!-- Custom js for this page-->
   <script src="{{ asset('assets/js/file-upload.js') }}"></script>
   <script src="{{ asset('assets/js/iCheck.js') }}"></script>
   <script src="{{ asset('assets/js/typeahead.js') }}"></script>
   <script src="{{ asset('assets/js/select2.js') }}"></script>
+  <script src="{{ asset('assets/js/moment.min.js') }}"></script>
+  @yield('js')
 </body>
 
 </html>

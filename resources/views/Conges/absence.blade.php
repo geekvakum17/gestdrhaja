@@ -7,6 +7,7 @@
 
         <div class="col-md-6 grid-margin stretch-card">
           <div class="card">
+            @include('inc.flash')
             <div class="card-body">
               <h4 class="card-title">Demande D'autorisation d'Absence</h4><br>
 
@@ -14,11 +15,11 @@
                 @csrf()
                 <div class="form-group">
                   <label for="exampleInputUsername1">Nom et Prénom de l'Intérim</label>
-                  <input type="text" class="form-control" id="nomiterim" name="nomiterim" placeholder="Username">
+                  <input type="text" class="form-control" id="nomiterim" name="nomiterim" placeholder="">
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Objet de l'Absence</label><br><br><br><br><br><br>
+                    <label class="col-sm-3 col-form-label">Objet de l'Absence</label><br>
 
                 <div class="form-check">
                     <label class="form-check-label">
@@ -51,17 +52,6 @@
 
                 </div>
 
-                <script>
-                    function choice() {
-
-                        if ($('input[type=radio][id=objetabsence3]').is(':checked')) {
-                            $('#objetabsence4').css("display", "block");
-                        } else if ($('input[type=radio][id=objetabsence]').is(':checked')) {
-                            $('#objetabsence4').css("display", "none");
-                        }
-                    }
-                </script>
-
                 <div class="form-group">
                     <label for="exampleInputUsername1">DATE DE DEPART</label>
                     <input type="date" class="form-control" id="datedepart" name="datedepart" placeholder="">
@@ -73,8 +63,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputUsername1">Durée en Jours Ouvrables</label>
-                    <input type="text" class="form-control" id="nbrejourouvrable" name="nbrejourouvrable" placeholder="">
+                    <label for="exampleInputUsername1">DUREE EN JOURS OUVRABLES</label>
+                    <input type="text" class="form-control" id="nbrejourouvrable" name="nbrejourouvrable" placeholder="" readonly="readonly">
                 </div>
                 <input type="hidden" class="form-control" id="statu" name="statu" value="3">
 
@@ -86,33 +76,6 @@
           </div>
         </div>
 
-        <script>
-            /*  var a = moment([2007, 0, 29]);
-            var b = moment([2007, 0, 28]);
-            console.log(a.diff(b, 'days')); */
-
-            var start = moment("2018-03-10", "YYYY-MM-DD");
-            var end = moment("2018-03-15", "YYYY-MM-DD");
-
-            //Difference in number of days
-            moment.duration(start.diff(end)).asDays();
-
-            //Difference in number of weeks
-            moment.duration(start.diff(end)).asWeeks();
-
-
-            $("#dateretour,#datedepart").change(function(){
-                var dateretour = $("#dateretour").val();
-                var datedepart = $("#datedepart").val();
-                var start = moment(dateretour, "YYYY-MM-DD");
-                var end = moment(datedepart, "YYYY-MM-DD");
-                var nbrejourouvrable = moment.duration(start.diff(end)).asDays();
-                $("#nbrjour").val(nbrejourouvrable);
-
-                console.log(datedepart);
-            });
-
-           </script>
 
         <div class="col-md-6 grid-margin stretch-card">
 
@@ -142,5 +105,45 @@
     </div>
  </div>
 
+
+@endsection
+
+@section('js')
+
+<script>
+
+    function choice() {
+    if ($('input[type=radio][id=objetabsence3]').is(':checked')) {
+        $('#objetabsence4').css("display", "block");
+    } else if ($('input[type=radio][id=objetabsence]').is(':checked')) {
+        $('#objetabsence4').css("display", "none");
+    }
+    }
+
+
+
+    // var start = moment("2018-03-10", "YYYY-MM-DD");
+    // var end = moment("2018-03-15", "YYYY-MM-DD");
+
+    //Difference in number of days
+   // moment.duration(start.diff(end)).asDays();
+
+    //Difference in number of weeks
+    //moment.duration(start.diff(end)).asWeeks();
+
+
+        $("#dateretour,#datedepart").change(function(){
+        var dateretour = $("#dateretour").val();
+        var datedepart = $("#datedepart").val();
+        var start = moment(dateretour, "YYYY-MM-DD");
+        var end = moment(datedepart, "YYYY-MM-DD");
+        var nbrejourouvrable = moment.duration(start.diff(end)).asDays();
+        var nbrejour
+        if(isNaN(nbrejourouvrable)){ nbrejourouvrable= ""}
+        console.log(nbrejourouvrable);
+        $("#nbrejourouvrable").val(nbrejourouvrable);
+    });
+
+   </script>
 
 @endsection

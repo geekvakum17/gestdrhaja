@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Absence;
 
-class AbsenceController extends Controller 
+class AbsenceController extends Controller
 {
 
   /**
@@ -23,6 +23,8 @@ class AbsenceController extends Controller
   {
     $absence = Absence::all();
     return view('Conges.absence', compact('absence'));
+
+
   }
 
   /**
@@ -32,7 +34,7 @@ class AbsenceController extends Controller
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -42,6 +44,7 @@ class AbsenceController extends Controller
    */
   public function store(Request $request)
   {
+      dd($request->all());
     try {
             $absence = new Absence();
             $absence->nomiterim = $request->nomiterim;
@@ -51,6 +54,7 @@ class AbsenceController extends Controller
             $absence->nbrejourouvrable = $request->nbrejourouvrable;
             $absence->statu = $request->statu;
             $absence->save();
+
       session()->flash('success', "Demande Faite avec succès !!!");
     } catch (\Exception $e) {
       session()->flash('warning', $e->getMessage());
@@ -67,7 +71,7 @@ class AbsenceController extends Controller
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -78,7 +82,7 @@ class AbsenceController extends Controller
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -89,7 +93,7 @@ class AbsenceController extends Controller
    */
   public function update($id)
   {
-    
+
   }
 
   /**
@@ -100,9 +104,9 @@ class AbsenceController extends Controller
    */
   public function destroy($id)
   {
-    
+
   }
-  
+
 }
 
 ?>
