@@ -38,6 +38,7 @@ Route::resource('poste', 'PosteController');
 Route::resource('user', 'UserController');
 Route::resource('absence', 'AbsenceController');
 Route::get('listeabsence', 'AbsenceController@liste')->name('listeabsence');
+Route::resource('demande', 'DemandeController');
 
 Route::group(['prefix'=>'Session','as'=>'session.'], function () {
     Route::post('/login', 'SessionController@login')->name('login');

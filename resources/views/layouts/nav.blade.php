@@ -55,7 +55,8 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="{{ route('absence.index') }}">Autorisation d'Absence</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('listeabsence') }}">Liste des Demandes</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Demande de Congé</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Demande de Congés</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Liste des Congés</a></li>
               </ul>
             </div>
           </li>

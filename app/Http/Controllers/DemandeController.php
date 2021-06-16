@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Demande;
 
-class DemandeController extends Controller 
+class DemandeController extends Controller
 {
 
   /**
@@ -19,11 +19,11 @@ class DemandeController extends Controller
       $this->middleware('auth');
   }
 
-  
+
   public function index()
   {
     $demande = Demande::all();
-    return view('Conges.demande', compact('demande'));
+    return view('Conges.', compact('demande'));
   }
 
   /**
@@ -68,7 +68,7 @@ class DemandeController extends Controller
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -79,7 +79,7 @@ class DemandeController extends Controller
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -90,7 +90,7 @@ class DemandeController extends Controller
    */
   public function update($id)
   {
-    
+
   }
 
   /**
@@ -101,9 +101,9 @@ class DemandeController extends Controller
    */
   public function destroy($id)
   {
-    
+
   }
-  
+
 }
 
 ?>

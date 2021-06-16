@@ -10,7 +10,7 @@
 
       <ul class="navbar-nav navbar-nav-right">
         <li class="nav-item count-indicator nav-profile dropdown">
-          <span class="count">3</span>
+          <span class="count"></span>
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
             <span class="nav-profile-name">Hi, Lucille Wilkins</span>
             <img src="{{ asset('assets/images/faces/face28.png') }}" alt="profile"/>
