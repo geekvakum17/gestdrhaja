@@ -1,6 +1,14 @@
 
   <nav class="sidebar sidebar-offcanvas" id="sidebar">
 
+    <div class="dropdown sidebar-profile-dropdown">
+        <a class="dropdown-toggle d-flex align-items-center justify-content-between" href="#" data-toggle="dropdown" id="profileDropdown1">
+          <div>
+            <div class="nav-profile-name">{{ auth()->user()->poste }}</div>
+          </div>
+        </a>
+
+      </div>
     <ul class="nav">
       <li class="nav-item">
         <div class="sidebar-title"></div>

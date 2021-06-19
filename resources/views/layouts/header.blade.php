@@ -12,7 +12,7 @@
         <li class="nav-item count-indicator nav-profile dropdown">
           <span class="count"></span>
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-            <span class="nav-profile-name">Hi, Lucille Wilkins</span>
+            <span class="nav-profile-name">{{ auth()->user()->nomprenom }}</span>
             <img src="{{ asset('assets/images/faces/face28.png') }}" alt="profile"/>
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
