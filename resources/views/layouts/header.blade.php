@@ -9,6 +9,17 @@
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
 
       <ul class="navbar-nav navbar-nav-right">
+
+        <li class="nav-item nav-search d-none d-sm-block">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="search">
+              <div class="input-group-prepend">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-success btn-icon-text" data-toggle="dropdown" id="profileDropdown6">
+                    <span class="input-group-text" id="search"> <i class="mdi mdi-magnify"></i> </span>
+                 </button>
+              </div>
+            </div>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <li class="nav-item count-indicator nav-profile dropdown">
           <span class="count"></span>
           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
@@ -26,7 +37,6 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
-
             </a>
           </div>
         </li>

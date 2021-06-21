@@ -29134,8 +29134,8 @@ div.tagsinput span.tag a {
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .input-group-text,
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .input-group-text {
   background: transparent;
-  border: 0;
-  color: #a7afb7;
+  border: 1;
+  color: #000000;
   padding: 0;
   font-size: 1rem;
 }
