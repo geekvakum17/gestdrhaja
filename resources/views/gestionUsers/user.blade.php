@@ -34,6 +34,7 @@
                     </tr>
                   </thead>
                   <tbody>
+
                     @foreach($user as $item)
                     <tr>
                       <td>

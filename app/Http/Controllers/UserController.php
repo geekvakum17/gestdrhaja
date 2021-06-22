@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
+use Illuminate\Database\Eloquent\Model;
 
 class UserController extends Controller
 {
@@ -113,11 +114,12 @@ class UserController extends Controller
   public function search()
   {
     $recherche = request()->input('recherche');
-    dd($recherche);
+    $users = User::where('matricule', 'like', "%$recherche%")
+          ->orwhere('nomprenom', 'like', "%$recherche%")->get();
+          //dd($users);
+          return view('gestionUsers.search')->with('users', $users);
+
   }
-
-
-
 
 
   /**
