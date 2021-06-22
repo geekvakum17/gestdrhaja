@@ -32,7 +32,6 @@ class AbsenceController extends Controller
     $absence = Absence::all();
     return view('Conges.listeabsence', compact('absence'));
 
-
   }
 
   /**
