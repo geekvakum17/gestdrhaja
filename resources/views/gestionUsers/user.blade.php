@@ -159,7 +159,7 @@
                             <select class="mb-3 form-control" id="Niveauetude" name="Niveauetude" required>
                                 <option>-Veuillez Sélectionner-</option>
                                 @foreach($niveauetude as $item )
-                                <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                <option value="{{ $item->libelle}}">{{ $item->libelle }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -171,7 +171,7 @@
                             <select class="mb-3 form-control" id="diplome" name="diplome" required>
                                 <option>-Veuillez Sélectionner-</option>
                                 @foreach($diplome as $item )
-                                <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                <option value="{{ $item->libelle}}">{{ $item->libelle }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -191,7 +191,7 @@
                             <select class="form-control" id="direction_id" name="direction_id" required>
                                 <option>-Veuillez Sélectionner-</option>
                                 @foreach($direction as $item )
-                                <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                <option value="{{ $item->libelle}}">{{ $item->libelle }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -203,7 +203,7 @@
                             <select class="form-control" id="sousdirection_id" name="sousdirection_id" required>
                                 <option>-Veuillez Sélectionner-</option>
                                 @foreach($sousdirection as $item )
-                                <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                <option value="{{ $item->libelle}}">{{ $item->libelle }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -215,7 +215,7 @@
                             <select class="form-control" name="agenceregional_id" id="agenceregional_id" required>
                                 <option>-Veuillez Sélectionner-</option>
                                 @foreach($agence as $item )
-                                <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                <option value="{{ $item->libelle}}">{{ $item->libelle }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -231,34 +231,11 @@
                             <select class="form-control" id="service_id" name="service_id" required>
                                 <option>-Veuillez Sélectionner-</option>
                                 @foreach($service as $item )
-                                <option value="{{ $item->id}}">{{ $item->libelle }}</option>
+                                <option value="{{ $item->libelle}}">{{ $item->libelle }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label class="floating-label" for="Name">Grade</label>
-                            <select class="mb-3 form-control" id="grade_id" name="grade_id" required>
-                                <option>-Veuillez Sélectionner-</option>
-                                @foreach($grade as $item )
-                                <option value="{{ $item->id}}">{{ $item->libelle }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <div class="form-group">
-                            <label class="floating-label" for="Name">Date de Prise de Service</label>
-                            <input type="date" class="form-control" id="datepriseservice" name="datepriseservice" placeholder="" required>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row">
 
                     <div class="col-sm-4">
                         <div class="form-group">
@@ -275,17 +252,63 @@
                         </div>
                     </div>
 
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="floating-label" for="Name">Grade</label>
+                            <select class="mb-3 form-control" id="grade_id" name="grade_id" required>
+                                <option>-Veuillez Sélectionner-</option>
+                                @foreach($grade as $item )
+                                <option value="{{ $item->libelle}}">{{ $item->libelle }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="floating-label" for="Name">Date de Prise de Service</label>
+                            <input type="date" class="form-control" id="datepriseservice" name="datepriseservice" placeholder="" required>
+                        </div>
+                    </div>
+
+
+
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label class="floating-label" for="Name">Poste</label>
                             <select class="mb-3 form-control" id="poste" name="poste" required>
                                 <option>-Veuillez Sélectionner-</option>
                                 @foreach($role as $item )
-                                <option value="{{ $item->id}}">{{ $item->name }}</option>
+                                <option value="{{ $item->name}}">{{ $item->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="floating-label" for="Name">Supérieur Hiérachique</label>
+                            <select class="mb-3 form-control" name="suphierachique" id="suphierachique" required>
+                                <option>-Veuillez Sélectionner-</option>
+                                <option value="Chef de Service">Chef de Service</option>
+                                <option value="Chef d'Agence">Chef d'Agence</option>
+                                <option value="Sous-Directeur">Sous-Directeur</option>
+                                <option value="Directeur">Directeur</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                    <div class="row">
 
                     <div class="col-sm-4">
                         <div class="form-group">
@@ -328,7 +351,7 @@
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success">Ajouter</button>
-          <button type="button" class="btn btn-light" data-dismiss="modal">Annuller</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuller</button>
         </div>
     </form>
       </div>
